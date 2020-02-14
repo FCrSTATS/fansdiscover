@@ -1,0 +1,188 @@
+{% extends 'main_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<br>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <img src="{% static '/images/profile_img/kudus.jpg' %}" class="rounded-circle mx-auto d-block" style = "border:2px solid #140000">
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 text-center">
+    <h1 style="color:#C9000A">Mohammed Kudus</h1>
+    <h3>Football Club</h3>
+    Position <br>
+    Nationality <br>
+    ?? yrs - DD-MM-YYYY
+    <h5>€ Market Value</h5>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<br>
+
+
+<div class="card-group">
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Your Reports</h5>
+      <h1 class="card-text text-center" style="color:#C9000A">1</h1>
+      <p class="card-text text-center">The player has <b>nn</b> reports from other scouts</p>
+    </div>
+    <!-- <div class="card-footer">
+      <small class="text-muted"></small>
+    </div> -->
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Performance Score</h5>
+      <h1 class="card-text text-center" style="color:#C9000A">8.3</h1>
+      <p class="card-text text-center">The average score from other scouts is <b>nn</b></p>
+    </div>
+    <!-- <div class="card-footer"> -->
+      <!-- <small class="text-muted"></small> -->
+    <!-- </div> -->
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Potential Score</h5>
+      <h1 class="card-text text-center" style="color:#C9000A">9.2</h1>
+      <p class="card-text text-center">The average score from other scouts is <b>nn</b></p>
+    </div>
+    <!-- <div class="card-footer"> -->
+      <!-- <small class="text-muted"></small> -->
+    <!-- </div> -->
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Value Score</h5>
+      <h1 class="card-text text-center" style="color:#C9000A">6.7</h1>
+      <p class="card-text text-center">The average score from other scouts is <b>nn</b></p>
+    </div>
+    <!-- <div class="card-footer"> -->
+      <!-- <small class="text-muted"></small> -->
+    <!-- </div> -->
+  </div>
+
+</div> <!-- end of report card group -->
+
+
+<div class="card-group"> <!-- start of report card group -->
+
+  <div class="card">
+    <div class="card-body">
+      <form class="" action="" method="post">
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1"><b>Player</b></label>
+    <input class="form-control" id="exampleFormControlInput1" placeholder="## have the player's name alraedy appear here">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput2"><b>Opponent</b></label>
+    <input class="form-control" id="exampleFormControlInput2" placeholder="#todo - ideally add a list of possible clubs">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput3"><b>Match Date</b></label>
+    <input class="form-control" id="exampleFormControlInput23" placeholder="DD-MM-YYYY #todo - add date picker">
+  </div>
+
+  <div class="form-group">
+  <label for="exampleFormControlTextarea1"><b>Match Report</b></label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+      <h5 class="card-title">Decide on Your Scores</h5>
+      <p></p>
+      <b>Performance Score</b>
+      <select class="browser-default custom-select">
+      <option selected>Entry your score...</option>
+      <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
+      <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
+      <option value="8">&nbsp;8 &nbsp;- &nbsp;Big 5 Squad Player</option>
+      <option value="7">&nbsp;7 &nbsp;- &nbsp;Bel / Hol / Port</option>
+      <option value="6">&nbsp;6 &nbsp;- &nbsp;DK Superliga Key Player</option>
+      <option value="5">&nbsp;5 &nbsp;- &nbsp;DK Superliga Starter</option>
+      <option value="4">&nbsp;4 &nbsp;- &nbsp;DK Superliga Squad Player</option>
+      <option value="3">&nbsp;3 &nbsp;- &nbsp;2nd Tier Scandinavia</option>
+      <option value="2">&nbsp;2 &nbsp;- &nbsp;Unlikely to Play Pro.</option>
+      <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
+      </select>
+
+      <p></p>
+      <b>Potential Score</b>
+      <select class="browser-default custom-select">
+      <option selected>Entry your score...</option>
+      <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
+      <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
+      <option value="8">&nbsp;8 &nbsp;- &nbsp;Big 5 Squad Player</option>
+      <option value="7">&nbsp;7 &nbsp;- &nbsp;Bel / Hol / Port</option>
+      <option value="6">&nbsp;6 &nbsp;- &nbsp;DK Superliga Key Player</option>
+      <option value="5">&nbsp;5 &nbsp;- &nbsp;DK Superliga Starter</option>
+      <option value="4">&nbsp;4 &nbsp;- &nbsp;DK Superliga Squad Player</option>
+      <option value="3">&nbsp;3 &nbsp;- &nbsp;2nd Tier Scandinavia</option>
+      <option value="2">&nbsp;2 &nbsp;- &nbsp;Unlikely to Play Pro.</option>
+      <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
+      </select>
+      <p></p>
+
+      <b>Value Score</b>
+      <select class="browser-default custom-select">
+      <option selected>Entry your score...</option>
+      <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
+      <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
+      <option value="8">&nbsp;8 &nbsp;- &nbsp;Big 5 Squad Player</option>
+      <option value="7">&nbsp;7 &nbsp;- &nbsp;Bel / Hol / Port</option>
+      <option value="6">&nbsp;6 &nbsp;- &nbsp;DK Superliga Key Player</option>
+      <option value="5">&nbsp;5 &nbsp;- &nbsp;DK Superliga Starter</option>
+      <option value="4">&nbsp;4 &nbsp;- &nbsp;DK Superliga Squad Player</option>
+      <option value="3">&nbsp;3 &nbsp;- &nbsp;2nd Tier Scandinavia</option>
+      <option value="2">&nbsp;2 &nbsp;- &nbsp;Unlikely to Play Pro.</option>
+      <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
+      </select>
+
+
+      <p></p>
+      <p>Need help remembering the <a href="#">Scoring System</a> ( opens in new tab )</p>
+      <!-- <br> -->
+      <button type="button" class="btn btn-success">Submit Report</button>
+      <p></p>
+
+            </form>
+
+    </div>
+    <div class="card-footer">
+      <!-- <small class="text-muted"></small> -->
+    </div>
+  </div>
+
+
+</div>
+
+<br><br><br>
+
+<div class="container">
+  {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">logout</a></p>
+  {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a> |
+    <a href="{% url 'signup' %}">signup</a>
+  {% endif %}
+  {% endblock %}
+</div>

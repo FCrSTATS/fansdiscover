@@ -1,0 +1,150 @@
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'vendor/animate/animate.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'vendor/select2/select2.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'css/util.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <title>Sign Up - Fans Discover</title>
+
+</head>
+
+  <body>
+  
+
+  	<div class="limiter">
+  		<div class="container-login100" style="background-image: url({% static '/images/bg-01.jpg' %});">
+  			<div class="wrap-signup100 p-t-30 p-b-50">
+  				<span class="login100-form-title p-b-20">
+            <img src="{% static '/images/FCNxRTD_STROKE1.png' %}" width="200">
+            <p>hosts a</p>
+  					<h1>FANS DISCOVER</h1>
+            <p>event</p>
+
+  				</span>
+
+
+            <!-- {% csrf_token %} -->
+
+            {% load widget_tweaks %}
+
+  				<form class="login100-form validate-form p-b-33 p-t-5" method = "post">
+            {% csrf_token %}
+            <!-- {{ form.username }} -->
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter username">
+            {% render_field form.username class+="input100" type+="text" name+="username" placeholder+="username" %}
+            <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+           </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter email">
+            {% render_field form.email class+="input100" type+="text" name+="email" placeholder+="email" %}
+            <span class="focus-input100" data-placeholder="&#xe818;"></span>
+           </div>
+
+           <div class="wrap-input100 validate-input" data-validate = "Enter last_name">
+           {% render_field form.last_name class+="input100" type+="text" name+="last_name" placeholder+="last_name" %}
+           <span class="focus-input100" data-placeholder="&#xe802;"></span>
+           </div>
+
+
+           <!--
+
+          <div class="wrap-input100 validate-input" data-validate = "Enter surname">
+          {% render_field form.surname class+="input100" type+="text" name+="surname" placeholder+="surname" %}
+          <span class="focus-input100" data-placeholder="&#xe802;"></span>
+         </div>
+
+         <div class="wrap-input100 validate-input" data-validate = "Enter password">
+           {% render_field form.password class+="input100" type+="password" name+="pass" placeholder+="password" %}
+           <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+         </div>
+
+      -->
+
+
+
+
+         <div class="wrap-input100 m-l-20 m-r-20">{{ form.username.help_text }}</div>
+         <!-- <div class="wrap-input100 m-l-20 m-r-20">{{ form.password.help_text }}</div> -->
+
+
+            <!-- {{ form.password }} -->
+            <!-- {{ form.as_p }} -->
+            <!-- {% load widget_tweaks %}
+
+  					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+              {% render_field form.username class+="input100" type+="text" name+="username" placeholder+="username" %}
+              {{ form.username.errors }}
+              <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+  					</div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter password">
+              {% render_field form.username class+="input100" type+="password" name+="pass" placeholder+="password" %}
+              {{ form.password.errors }}
+              <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+            </div>
+
+  					<div class="wrap-input100 validate-input" data-validate="Enter password">
+  						<input class="input100" type="password" name="pass" placeholder="password">
+  						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+  					</div> -->
+
+  					<div class="container-login100-form-btn m-t-32">
+  						<button class="login100-form-btn" type = "submit">
+  							Sign-Up
+  						</button>
+  					</div>
+
+
+  				</form>
+
+  			</div>
+  		</div>
+  	</div>
+
+
+  	<div id="dropDownSelect1"></div>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
