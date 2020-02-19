@@ -1,0 +1,328 @@
+id,player,club,position,age,value,nationality,avatar_url
+0,M. Kudus,Nordsjælland,Striker,19,3000000,Ghana,images/profile_img/1.jpg
+1,J. Stage,København,Left-Back,23,3000000,Denmark,images/profile_img/empty.jpg
+2,F. Onyeka,Midtjylland,Defensive-Midfielder,22,3000000,Nigeria,images/profile_img/empty.jpg
+3,M. Kofod Andersen,Nordsjælland,Left-Back,20,2000000,Denmark,images/profile_img/empty.jpg
+4,J. Christensen,Nordsjælland,Defensive-Midfielder,18,2000000,Denmark,images/profile_img/empty.jpg
+5,J. Wind,København,Striker,20,2000000,Denmark,images/profile_img/empty.jpg
+6,M. Bundu,AGF,Right Wing,22,2000000,Sierra Leone,images/profile_img/empty.jpg
+7,S. Kaba,Midtjylland,Striker,24,2000000,Guinea,images/profile_img/empty.jpg
+8,R. Falk,København,Left-Back,28,2000000,Denmark,images/profile_img/empty.jpg
+9,K. Bartolec,København,Right-Back,24,2000000,Croatia,images/profile_img/empty.jpg
+10,H. Mukhtar,Nashville SC,Attacking-Midfielder,24,2000000,"Germany, Sudan",images/profile_img/empty.jpg
+11,S. Tibbling,Brøndby,Left Wing,25,2000000,Sweden,images/profile_img/empty.jpg
+12,E. Sviatchenko,Midtjylland,Centre-Back,28,2000000,"Denmark, Ukraine",images/profile_img/empty.jpg
+13,A. Scholz,Midtjylland,Left Centre-Back,27,2000000,"Denmark, Germany",images/profile_img/empty.jpg
+14,J. Andersson,Midtjylland,Right-Back,23,2000000,Sweden,images/profile_img/empty.jpg
+15,A. Mabil,Midtjylland,Attacking-Midfielder,24,2000000,"Kenya, Australia",images/profile_img/empty.jpg
+16,K. Hansen,Nordsjælland,Centre-Back,30,1000000,Denmark,images/profile_img/empty.jpg
+17,M. Dal Hende,Midtjylland,Left-Back,29,1000000,Denmark,images/profile_img/empty.jpg
+18,G. Donyoh,Dynamo Dresden,Striker,25,1000000,Ghana,images/profile_img/empty.jpg
+19,I. Atanga,Nordsjælland,Right Wing,19,1000000,Ghana,images/profile_img/empty.jpg
+20,N. Dyhr,Midtjylland,Left-Back,18,1000000,Denmark,images/profile_img/empty.jpg
+21,A. Bjelland,København,Left Centre-Back,31,1000000,Denmark,images/profile_img/empty.jpg
+22,V. Mannone,Esbjerg,Goalkeeper,31,1000000,Italy,images/profile_img/empty.jpg
+23,S. Grytebust,København,Goalkeeper,30,1000000,Norway,images/profile_img/empty.jpg
+24,S. Papagiannopoulos,København,Centre-Back,29,1000000,Greece,images/profile_img/empty.jpg
+25,K. Johnsson,København,Goalkeeper,30,1000000,Sweden,images/profile_img/empty.jpg
+26,Zeca,København,Left-Back,31,1000000,"Portugal, Greece",images/profile_img/empty.jpg
+27,P. Sotiriou,København,Striker,27,1000000,Cyprus,images/profile_img/empty.jpg
+28,Michael Santos,København,Striker,26,1000000,Uruguay,images/profile_img/empty.jpg
+29,G. Varela,København,Right-Back,26,1000000,"Uruguay, Spain",images/profile_img/empty.jpg
+30,R. Kurzawa,Esbjerg,Right Wing,27,1000000,Poland,images/profile_img/empty.jpg
+31,Pep Biel,København,Right Wing,23,1000000,Spain,images/profile_img/empty.jpg
+32,J. Lungi Sørensen,Esbjerg,Left-Back,21,1000000,Denmark,images/profile_img/empty.jpg
+33,M. Kaufmann,København,Striker,19,1000000,Denmark,images/profile_img/empty.jpg
+34,E. Marcondes,Brentford,Attacking-Midfielder,24,1000000,"Denmark, Brazil",images/profile_img/empty.jpg
+35,S. Lobjanidze,Ankaragücü,Left Wing,25,1000000,Georgia,images/profile_img/empty.jpg
+36,G. Wikheim,Al Fateh,Striker,26,1000000,Norway,images/profile_img/empty.jpg
+37,J. Larsson,Brøndby,Right-Back,29,1000000,Sweden,images/profile_img/empty.jpg
+38,R. Mudražija,København,Left-Back,22,1000000,Croatia,images/profile_img/empty.jpg
+39,J. Radošević,Brøndby,Defensive-Midfielder,25,1000000,Croatia,images/profile_img/empty.jpg
+40,K. Wilczek,Göztepe,Striker,32,1000000,Poland,images/profile_img/empty.jpg
+41,C. Holse,Rosenborg,Right Wing,20,1000000,Denmark,images/profile_img/empty.jpg
+42,N. Thomsen,København,Left-Back,26,1000000,Denmark,images/profile_img/empty.jpg
+43,E. Sabbi,Hobro,Right Wing,22,1000000,"Ghana, USA",images/profile_img/empty.jpg
+44,J. Lindstrøm,Brøndby,Left Wing,19,1000000,Denmark,images/profile_img/empty.jpg
+45,K. Larsen,OB,Centre-Back,27,1000000,Denmark,images/profile_img/empty.jpg
+46,L. Vigen Christensen,Brøndby,Left-Back,25,1000000,Denmark,images/profile_img/empty.jpg
+47,S. Hedlund,Brøndby,Striker,26,1000000,Sweden,images/profile_img/empty.jpg
+48,S. Rosted,Brøndby,Left Centre-Back,25,1000000,Norway,images/profile_img/empty.jpg
+49,A. Maxsø,Brøndby,Centre-Back,25,1000000,Denmark,images/profile_img/empty.jpg
+50,O. Christensen,OB,Goalkeeper,20,1000000,Denmark,images/profile_img/empty.jpg
+51,M. Frendrup,Brøndby,Left-Back,18,1000000,Denmark,images/profile_img/empty.jpg
+52,A. Petre,Esbjerg,Striker,22,1000000,Romania,images/profile_img/empty.jpg
+53,A. Francis,Nordsjælland,Left-Back,18,1000000,Ghana,images/profile_img/empty.jpg
+54,K. Kusk,AaB,Right Wing,28,1000000,Denmark,images/profile_img/empty.jpg
+55,L. Andersen,AaB,Left Wing,25,1000000,Denmark,images/profile_img/empty.jpg
+56,I. Fossum,AaB,Left-Back,23,1000000,Norway,images/profile_img/empty.jpg
+57,M. Christensen,AaB,Defensive-Midfielder,22,1000000,Denmark,images/profile_img/empty.jpg
+58,D. Cools,Midtjylland,Right-Back,23,1000000,"Malaysia, Belgium",images/profile_img/empty.jpg
+59,M. Anderson,Midtjylland,Attacking-Midfielder,21,1000000,"Iceland, Denmark",images/profile_img/empty.jpg
+60,U. Yttergård Jenssen,Nordsjælland,Left Centre-Back,23,900000,Norway,images/profile_img/empty.jpg
+61,J. Okore,AaB,Centre-Back,27,900000,"Côte d'Ivoire, Denmark",images/profile_img/empty.jpg
+62,D. N'Doye,København,Striker,35,900000,Senegal,images/profile_img/empty.jpg
+63,P. Carlgren,Randers,Goalkeeper,27,800000,Sweden,images/profile_img/empty.jpg
+64,N. Poulsen,AGF,Defensive-Midfielder,26,800000,Denmark,images/profile_img/empty.jpg
+65,W. Eskelinen,AGF,Goalkeeper,23,800000,Sweden,images/profile_img/empty.jpg
+66,A. Munksgaard,AGF,Right-Back,22,800000,Denmark,images/profile_img/empty.jpg
+67,J. Thorsteinsson,AGF,Left Wing,21,800000,Iceland,images/profile_img/empty.jpg
+68,L. Parunashvili,Esbjerg,Left-Back,27,800000,Georgia,images/profile_img/empty.jpg
+69,Y. Yakovenko,Esbjerg,Striker,26,800000,"France, Ukraine",images/profile_img/empty.jpg
+70,M. Dauda,Esbjerg,Striker,22,800000,Ghana,images/profile_img/empty.jpg
+71,B. Kadrii,Al Fateh,Striker,28,800000,"Denmark, North Macedonia",images/profile_img/empty.jpg
+72,H. Hermannsson,Brøndby,Centre-Back,25,800000,Iceland,images/profile_img/empty.jpg
+73,K. Mensah,Brøndby,Right-Back,28,800000,"Denmark, Ghana",images/profile_img/empty.jpg
+74,M. Schwäbe,Brøndby,Goalkeeper,24,800000,Germany,images/profile_img/empty.jpg
+75,S. Svendsen,OB,Striker,22,800000,Norway,images/profile_img/empty.jpg
+76,S. Mráz,Brøndby,Striker,22,800000,Slovakia,images/profile_img/empty.jpg
+77,J. Rinne,AaB,Goalkeeper,26,800000,Sweden,images/profile_img/empty.jpg
+78,F. Børsting,AaB,Right Wing,25,800000,Denmark,images/profile_img/empty.jpg
+79,M. Rygaard,Nordsjælland,Striker,28,700000,Denmark,images/profile_img/empty.jpg
+80,M. Rasmussen,Nordsjælland,Left-Back,22,700000,Norway,images/profile_img/empty.jpg
+81,K. Diks,AGF,Right Wing,23,700000,"Netherlands, Indonesia",images/profile_img/empty.jpg
+82,D. Anyembe,Esbjerg,Right-Back,21,700000,"Denmark, Kenya",images/profile_img/empty.jpg
+83,M. Thychosen,Nordsjælland,Right-Back,22,700000,Denmark,images/profile_img/empty.jpg
+84,I. Sadiq,Nordsjælland,Left Wing,19,700000,Ghana,images/profile_img/empty.jpg
+85,A. Mumin,Nordsjælland,Centre-Back,21,700000,Ghana,images/profile_img/empty.jpg
+86,J. Amon,Nordsjælland,Striker,20,700000,USA,images/profile_img/empty.jpg
+87,M. Amini,AGF,Left-Back,26,700000,"Australia, Afghanistan",images/profile_img/empty.jpg
+88,C. Højer Nielsen,AGF,Left-Back,25,700000,Denmark,images/profile_img/empty.jpg
+89,M. Egho,Randers,Striker,25,700000,Austria,images/profile_img/empty.jpg
+90,P. Bengtsson,København,Left-Back,31,700000,Sweden,images/profile_img/empty.jpg
+91,B. Oviedo,København,Left-Back,30,700000,Costa Rica,images/profile_img/empty.jpg
+92,M. Kristensen,Esbjerg,Right Wing,22,700000,Denmark,images/profile_img/empty.jpg
+93,D. Kaiser,Hannover 96,Left-Back,31,700000,Germany,images/profile_img/empty.jpg
+94,S. Nilsen,Elfsborg,Left Centre-Back,28,700000,Norway,images/profile_img/empty.jpg
+95,A. Jovanović,Deportivo La Coruña,Goalkeeper,27,700000,"Serbia, Montenegro",images/profile_img/empty.jpg
+96,S. Gartenmann,SønderjyskE,Left-Back,23,700000,Denmark,images/profile_img/empty.jpg
+97,A. Jung,Brøndby,Left-Back,28,700000,"Spain, Germany",images/profile_img/empty.jpg
+98,J. Laursen,OB,,25,700000,Denmark,images/profile_img/empty.jpg
+99,J. Tverskov,OB,Centre-Back,26,700000,Denmark,images/profile_img/empty.jpg
+100,T. van Weert,AaB,Striker,29,700000,Netherlands,images/profile_img/empty.jpg
+101,R. Thelander,AaB,Left Centre-Back,28,700000,Denmark,images/profile_img/empty.jpg
+102,P. Olsen,AaB,Left-Back,25,700000,Denmark,images/profile_img/empty.jpg
+103,M. Madsen,Silkeborg,Left-Back,22,700000,Denmark,images/profile_img/empty.jpg
+104,L. Vibe,Midtjylland,Striker,33,700000,Denmark,images/profile_img/empty.jpg
+105,R. Nicolaisen,Midtjylland,Left Centre-Back,22,700000,Denmark,images/profile_img/empty.jpg
+106,T. Sana,IFK Göteborg,Left-Back,30,600000,"Sweden, Burkina Faso",images/profile_img/empty.jpg
+107,A. Rømer,Randers,Left-Back,26,600000,Denmark,images/profile_img/empty.jpg
+108,V. Hammershøj-Mistrati,Randers,Left-Back,27,600000,Denmark,images/profile_img/empty.jpg
+109,E. Riis Jakobsen,Randers,Striker,21,600000,Denmark,images/profile_img/empty.jpg
+110,N. Larsen,Nordsjælland,Goalkeeper,28,600000,Denmark,images/profile_img/empty.jpg
+111,P. Soiri,Esbjerg,Left Wing,25,600000,"Finland, Namibia",images/profile_img/empty.jpg
+112,J. Højbjerg,Esbjerg,Goalkeeper,24,600000,Denmark,images/profile_img/empty.jpg
+113,J. Lauridsen,Randers,Left-Back,28,600000,Denmark,images/profile_img/empty.jpg
+114,P. Mortensen,AGF,Striker,30,600000,Denmark,images/profile_img/empty.jpg
+115,J. Ankersen,AGF,Left Wing,29,600000,Denmark,images/profile_img/empty.jpg
+116,B. Blume,AGF,Attacking-Midfielder,28,600000,Denmark,images/profile_img/empty.jpg
+117,Z. Duncan,AGF,Left-Back,19,600000,Australia,images/profile_img/empty.jpg
+118,K. Junker,Bodø / Glimt,Right Wing,25,600000,Denmark,images/profile_img/empty.jpg
+119,O. Abildgaard,Rubin Kazan',Left-Back,23,600000,Denmark,images/profile_img/empty.jpg
+120,J. Kauko,Esbjerg,Left-Back,29,600000,Finland,images/profile_img/empty.jpg
+121,M. Lieder,OB,Striker,29,600000,Netherlands,images/profile_img/empty.jpg
+122,L. Prip,Horsens,Right Wing,22,600000,Denmark,images/profile_img/empty.jpg
+123,C. Jakobsen,SønderjyskE,Left-Back,26,600000,Denmark,images/profile_img/empty.jpg
+124,E. Babayan,Hobro,Left Wing,24,600000,"Denmark, Armenia",images/profile_img/empty.jpg
+125,A. Bah,SønderjyskE,Right-Back,22,600000,Denmark,images/profile_img/empty.jpg
+126,I. Jebali,OB,Striker,28,600000,Tunisia,images/profile_img/empty.jpg
+127,M. Uhre,Brøndby,Striker,25,600000,Denmark,images/profile_img/empty.jpg
+128,M. Lund,OB,Left Centre-Back,23,600000,Denmark,images/profile_img/empty.jpg
+129,F. Winther,Lyngby,Left Centre-Back,19,600000,Denmark,images/profile_img/empty.jpg
+130,R. Schwartz,Midtjylland,Striker,30,600000,Denmark,images/profile_img/empty.jpg
+131,A. Dreyer,Midtjylland,Attacking-Midfielder,21,600000,Denmark,images/profile_img/empty.jpg
+132,E. Marxen,Randers,Left Centre-Back,29,500000,Denmark,images/profile_img/empty.jpg
+133,M. Kallesøe,Randers,Right Wing,22,500000,Denmark,images/profile_img/empty.jpg
+134,C. Antwi,Nordsjælland,Left-Back,20,500000,Ghana,images/profile_img/empty.jpg
+135,A. Ludwig,Horsens,Left Centre-Back,26,500000,Denmark,images/profile_img/empty.jpg
+136,J. Thomasen,OB,Left-Back,23,500000,Denmark,images/profile_img/empty.jpg
+137,R. Leeuwin,AZ,Centre-Back,32,500000,"Netherlands, Suriname",images/profile_img/empty.jpg
+138,F. Brorsson,Esbjerg,Defensive-Midfielder,24,500000,Sweden,images/profile_img/empty.jpg
+139,H. Hansson,Horsens,Left-Back,27,500000,Faroe Islands,images/profile_img/empty.jpg
+140,B. Jacobsen,Horsens,Left-Back,26,500000,Denmark,images/profile_img/empty.jpg
+141,T. Børkeeiet,Brøndby,Defensive-Midfielder,20,500000,Norway,images/profile_img/empty.jpg
+142,R. Hassan,SønderjyskE,Right Wing,29,500000,Nigeria,images/profile_img/empty.jpg
+143,P. Banggaard,SønderjyskE,Centre-Back,25,500000,Denmark,images/profile_img/empty.jpg
+144,P. Kirkevold,Hobro,Striker,29,500000,Norway,images/profile_img/empty.jpg
+145,N. Strunck Jakobsen,Groningen,Left-Back,20,500000,Denmark,images/profile_img/empty.jpg
+146,J. Drachmann,OB,Defensive-Midfielder,31,500000,Denmark,images/profile_img/empty.jpg
+147,T. Kløve,OB,Left-Back,29,500000,Denmark,images/profile_img/empty.jpg
+148,R. Laursen,OB,,27,500000,"USA, Denmark",images/profile_img/empty.jpg
+149,J. Ahlmann,AaB,Left-Back,29,500000,Denmark,images/profile_img/empty.jpg
+150,J. Okkels,Silkeborg,Left Wing,20,500000,Denmark,images/profile_img/empty.jpg
+151,Júnior Brumado,Silkeborg,Striker,20,500000,Brazil,images/profile_img/empty.jpg
+152,J. Hansen,Midtjylland,Goalkeeper,34,500000,Denmark,images/profile_img/empty.jpg
+153,M. Rømer,Lyngby,Left-Back,28,500000,Denmark,images/profile_img/empty.jpg
+154,R. Corlu,Lyngby,Attacking-Midfielder,22,500000,"Denmark, Turkey",images/profile_img/empty.jpg
+155,J. Cajuste,Midtjylland,Right-Back,20,500000,"Sweden, USA",images/profile_img/empty.jpg
+156,M. Rojas,Melbourne Victory,Left-Back,28,500000,"New Zealand, Chile",images/profile_img/empty.jpg
+157,A. Okosun,Midtjylland,Left-Back,26,450000,Germany,images/profile_img/empty.jpg
+158,A. Ahmedhodzic,Hobro,Centre-Back,20,450000,"Bosnia and Herzegovina, Sweden",images/profile_img/empty.jpg
+159,G. Marcussen,Lyngby,Striker,21,450000,Denmark,images/profile_img/empty.jpg
+160,K. Pedersen,AaB,Left Centre-Back,26,400000,Denmark,images/profile_img/empty.jpg
+161,B. Kopplin,Randers,Right-Back,30,400000,Germany,images/profile_img/empty.jpg
+162,M. Nielsen,Randers,Left Centre-Back,28,400000,Denmark,images/profile_img/empty.jpg
+163,A. Kamara,Randers,Striker,25,400000,Sierra Leone,images/profile_img/empty.jpg
+164,F. Lauenborg,Randers,Left-Back,22,400000,Denmark,images/profile_img/empty.jpg
+165,M. Opondo,OB,Left-Back,22,400000,"Denmark, Uganda",images/profile_img/empty.jpg
+166,N. Bendtner,København,Striker,31,400000,Denmark,images/profile_img/empty.jpg
+167,A. Ammitzbøll,AGF,Striker,20,400000,Denmark,images/profile_img/empty.jpg
+168,W. Ali,Vendsyssel,Left Wing,21,400000,"Denmark, Palestine",images/profile_img/empty.jpg
+169,N. Backman,AGF,Centre-Back,31,400000,Sweden,images/profile_img/empty.jpg
+170,N. Helenius,AGF,Striker,28,400000,Denmark,images/profile_img/empty.jpg
+171,J. Kristoffersen,Hobro,Striker,22,400000,Norway,images/profile_img/empty.jpg
+172,J. Brinch,Esbjerg,Centre-Back,24,400000,Denmark,images/profile_img/empty.jpg
+173,J. Poulsen,Melbourne Victory,Defensive-Midfielder,36,400000,Denmark,images/profile_img/empty.jpg
+174,R. Thellufsen,Hansa Rostock,Left Wing,23,400000,Denmark,images/profile_img/empty.jpg
+175,J. Thorsen,Horsens,Left Wing,29,400000,Denmark,images/profile_img/empty.jpg
+176,N. Brock-Madsen,Horsens,Striker,27,400000,Denmark,images/profile_img/empty.jpg
+177,R. Frantsen,Horsens,Striker,28,400000,Denmark,images/profile_img/empty.jpg
+178,M. Kiilerich,Horsens,Centre-Back,24,400000,Denmark,images/profile_img/empty.jpg
+179,P. Therkildsen,Horsens,Left-Back,21,400000,Denmark,images/profile_img/empty.jpg
+180,M. Greve,Randers,Left-Back,24,400000,Denmark,images/profile_img/empty.jpg
+181,P. Buch Christiansen,SønderjyskE,Striker,20,400000,Denmark,images/profile_img/empty.jpg
+182,A. Jacobsen,SønderjyskE,Striker,30,400000,Denmark,images/profile_img/empty.jpg
+183,S. Mielitz,SønderjyskE,Goalkeeper,30,400000,Germany,images/profile_img/empty.jpg
+184,M. Albæk,SønderjyskE,Defensive-Midfielder,30,400000,Denmark,images/profile_img/empty.jpg
+185,A. Dovbyk,Midtjylland,Striker,22,400000,Ukraine,images/profile_img/empty.jpg
+186,M. Pedersen,Hobro,Left-Back,24,400000,Denmark,images/profile_img/empty.jpg
+187,O. Lund,OB,,29,400000,Denmark,images/profile_img/empty.jpg
+188,A. Juel Andersen,OB,,29,400000,Denmark,images/profile_img/empty.jpg
+189,A. Þrándarson,OB,Left-Back,25,400000,Iceland,images/profile_img/empty.jpg
+190,J. Gammelby,Brøndby,Right-Back,25,400000,Denmark,images/profile_img/empty.jpg
+191,A. Skipper,Brøndby,Left Centre-Back,19,400000,Denmark,images/profile_img/empty.jpg
+192,O. Klitten,AaB,Left Wing,19,400000,Denmark,images/profile_img/empty.jpg
+193,R. Romo,Silkeborg,Goalkeeper,29,400000,Venezuela,images/profile_img/empty.jpg
+194,K. Pallesen,AaB,Right-Back,29,400000,Denmark,images/profile_img/empty.jpg
+195,S. Crone,Silkeborg,Right-Back,24,400000,Denmark,images/profile_img/empty.jpg
+196,M. Brink,Silkeborg,Left-Back,21,400000,Denmark,images/profile_img/empty.jpg
+197,A. Hagelskjær,Silkeborg,Left-Back,23,400000,Denmark,images/profile_img/empty.jpg
+198,M. Ross,AaB,Left Centre-Back,19,400000,Denmark,images/profile_img/empty.jpg
+199,P. Arajuuri,Pafos,Centre-Back,31,400000,Finland,images/profile_img/empty.jpg
+200,E. Nielsen,Lyngby,Striker,26,400000,Denmark,images/profile_img/empty.jpg
+201,F. Gytkjær,Lyngby,Striker,26,400000,Denmark,images/profile_img/empty.jpg
+202,Paulinho,Midtjylland,,25,400000,Brazil,images/profile_img/empty.jpg
+203,K. Enghardt,Lyngby,Left-Back,27,400000,Denmark,images/profile_img/empty.jpg
+204,T. Kehinde,Randers,Left Wing,21,350000,Nigeria,images/profile_img/empty.jpg
+205,S. Hausner,AGF,Left Centre-Back,19,350000,Denmark,images/profile_img/empty.jpg
+206,V. Tranberg,Esbjerg,Centre-Back,22,350000,Denmark,images/profile_img/empty.jpg
+207,M. James,Midtjylland,Centre-Back,26,350000,"Dominica, Canada",images/profile_img/empty.jpg
+208,F. Tingager,AGF,Left Centre-Back,26,350000,Denmark,images/profile_img/empty.jpg
+209,E. Jónsson,SønderjyskE,Left-Back,31,350000,Iceland,images/profile_img/empty.jpg
+210,J. Bøge,Hobro,Right-Back,30,350000,Denmark,images/profile_img/empty.jpg
+211,J. Simonsen,SønderjyskE,Left-Back,24,350000,Denmark,images/profile_img/empty.jpg
+212,C. Cappis,Hobro,Left-Back,20,350000,USA,images/profile_img/empty.jpg
+213,M. Frøkjær-Jensen,OB,Right Wing,20,350000,Denmark,images/profile_img/empty.jpg
+214,F. Møller,Silkeborg,Left-Back,26,350000,Denmark,images/profile_img/empty.jpg
+215,F. Lesniak,Silkeborg,Defensive-Midfielder,23,350000,Slovakia,images/profile_img/empty.jpg
+216,P. da Silva,Lyngby,Left-Back,25,350000,"Denmark, Brazil",images/profile_img/empty.jpg
+217,N. Geertsen,Lyngby,Centre-Back,28,350000,Denmark,images/profile_img/empty.jpg
+218,M. Hebo Rasmussen,Lyngby,Left-Back,24,350000,Denmark,images/profile_img/empty.jpg
+219,G. Isaksen,Midtjylland,Attacking-Midfielder,18,350000,Denmark,images/profile_img/empty.jpg
+220,P. Vindahl Jensen,Nordsjælland,Goalkeeper,21,300000,Denmark,images/profile_img/empty.jpg
+221,K. Høgh,Randers,Striker,19,300000,Denmark,images/profile_img/empty.jpg
+222,D. Amankwaa,SønderjyskE,Right Wing,25,300000,"Denmark, Ghana",images/profile_img/empty.jpg
+223,M. Aaquist,Viborg,Right-Back,25,300000,Denmark,images/profile_img/empty.jpg
+224,B. Hvidt,AGF,Left-Back,19,300000,Denmark,images/profile_img/empty.jpg
+225,G. Links,AGF,Right Wing,21,300000,South Africa,images/profile_img/empty.jpg
+226,J. Juelsgård,AGF,Left Centre-Back,31,300000,Denmark,images/profile_img/empty.jpg
+227,J. Pohl,Horsens,Striker,23,300000,Denmark,images/profile_img/empty.jpg
+228,K. Madu,OB Res.,,24,300000,Nigeria,images/profile_img/empty.jpg
+229,K. Conboy,Esbjerg,Left-Back,32,300000,"Denmark, England",images/profile_img/empty.jpg
+230,A. Erceg,Esbjerg,Left Wing,30,300000,Croatia,images/profile_img/empty.jpg
+231,S. Reese,Esbjerg,Left Centre-Back,26,300000,Denmark,images/profile_img/empty.jpg
+232,M. Qvist,Horsens,Left Centre-Back,26,300000,"Colombia, Denmark",images/profile_img/empty.jpg
+233,F. Putros,Viborg,Left-Back,26,300000,"Denmark, Iraq",images/profile_img/empty.jpg
+234,J. Gertsen,Silkeborg,Left Centre-Back,23,300000,Denmark,images/profile_img/empty.jpg
+235,M. Lumb,Horsens,Left-Back,32,300000,Denmark,images/profile_img/empty.jpg
+236,M. Delač,Horsens,Goalkeeper,27,300000,"Bosnia and Herzegovina, Croatia",images/profile_img/empty.jpg
+237,K. Fisker,Brøndby,Left-Back,31,300000,Denmark,images/profile_img/empty.jpg
+238,J. Rask,Hobro,Goalkeeper,31,300000,Denmark,images/profile_img/empty.jpg
+239,R. Minor Petersen,Hobro,Left Centre-Back,31,300000,Denmark,images/profile_img/empty.jpg
+240,O. Thychosen,Hobro,Left Wing,27,300000,Denmark,images/profile_img/empty.jpg
+241,I. Louati,Hobro,Striker,26,300000,Tunisia,images/profile_img/empty.jpg
+242,N. Marfelt,SønderjyskE,Left-Back,25,300000,Denmark,images/profile_img/empty.jpg
+243,M. Haarup,Hobro,Left-Back,24,300000,Denmark,images/profile_img/empty.jpg
+244,V. Ekani,SønderjyskE,Defensive-Midfielder,22,300000,Cameroon,images/profile_img/empty.jpg
+245,Óscar Whalley,OFI,Goalkeeper,25,300000,"Spain, England",images/profile_img/empty.jpg
+246,N. Vallys,Silkeborg,Right Wing,23,300000,Denmark,images/profile_img/empty.jpg
+247,F. Ibsen,Silkeborg,Centre-Back,20,300000,"Denmark, Brazil",images/profile_img/empty.jpg
+248,V. Moberg,Silkeborg,Left-Back,29,300000,Norway,images/profile_img/empty.jpg
+249,E. Holten,Silkeborg,Striker,23,300000,Denmark,images/profile_img/empty.jpg
+250,T. Sparv,Midtjylland,Defensive-Midfielder,33,300000,Finland,images/profile_img/empty.jpg
+251,K. Tshiembe,Lyngby,Centre-Back,22,300000,"Denmark, Congo DR",images/profile_img/empty.jpg
+252,S. Graves Jensen,Randers,Centre-Back,20,250000,Denmark,images/profile_img/empty.jpg
+253,S. Maholli,Silkeborg,Striker,26,250000,"Sweden, Kosovo",images/profile_img/empty.jpg
+254,J. Dakir,Randers,Goalkeeper,22,250000,Denmark,images/profile_img/empty.jpg
+255,N. Røjkjær,Esbjerg,Right Wing,21,250000,Denmark,images/profile_img/empty.jpg
+256,J. Christjansen,Lyngby,Left-Back,32,250000,Denmark,images/profile_img/empty.jpg
+257,E. Simonsen,Nykøbing,Left Wing,20,250000,Denmark,images/profile_img/empty.jpg
+258,N. Madsen,Midtjylland,Defensive-Midfielder,19,250000,Denmark,images/profile_img/empty.jpg
+259,P. Egelund,Esbjerg,Left Wing,19,250000,Denmark,images/profile_img/empty.jpg
+260,T. Damsgaard,Randers,Right Wing,21,250000,Denmark,images/profile_img/empty.jpg
+261,E. Mašović,Horsens,Centre-Back,21,250000,"Serbia, Bosnia and Herzegovina",images/profile_img/empty.jpg
+262,M. Lansing,Horsens,Goalkeeper,25,250000,USA,images/profile_img/empty.jpg
+263,J. Absalonsen,SønderjyskE,Left Wing,34,250000,Denmark,images/profile_img/empty.jpg
+264,J. Brix-Damborg,Hobro,Left-Back,33,250000,Denmark,images/profile_img/empty.jpg
+265,K. Memija,Hobro,Attacking-Midfielder,24,250000,Bosnia and Herzegovina,images/profile_img/empty.jpg
+266,J. Eskesen,SønderjyskE,Right Wing,20,250000,Denmark,images/profile_img/empty.jpg
+267,A. Gersbach,AGF,Left-Back,22,250000,Australia,images/profile_img/empty.jpg
+268,K. Luijckx,Silkeborg,Left Centre-Back,34,250000,Netherlands,images/profile_img/empty.jpg
+269,M. Kaalund,Silkeborg,Left-Back,23,250000,Denmark,images/profile_img/empty.jpg
+270,L. Fosgaard,Lyngby,Right-Back,33,250000,Denmark,images/profile_img/empty.jpg
+271,A. Riel,Lyngby,Striker,30,250000,Denmark,images/profile_img/empty.jpg
+272,K. Jørgensen,Lyngby,Right-Back,20,250000,Denmark,images/profile_img/empty.jpg
+273,P. Kristensen,AaB,Left-Back,32,200000,Denmark,images/profile_img/empty.jpg
+274,B. Stokke,Randers,Striker,29,200000,Norway,images/profile_img/empty.jpg
+275,M. Hvilsom,Hobro,Striker,27,200000,Denmark,images/profile_img/empty.jpg
+276,J. Linnet,Horsens,Striker,24,200000,Denmark,images/profile_img/empty.jpg
+277,A. Mohammad,Lyngby,Right Wing,23,200000,"Denmark, Pakistan",images/profile_img/empty.jpg
+278,M. Halsti,Esbjerg,Left Centre-Back,35,200000,Finland,images/profile_img/empty.jpg
+279,J. Rothmann,Nordsjælland,Striker,19,200000,Denmark,images/profile_img/empty.jpg
+280,M. Anbo,AGF,Right Wing,19,200000,Denmark,images/profile_img/empty.jpg
+281,Í. Ólafsson,SønderjyskE,Left Centre-Back,19,200000,Iceland,images/profile_img/empty.jpg
+282,R. Austin,Esbjerg,Centre-Back,34,200000,Jamaica,images/profile_img/empty.jpg
+283,M. Larsen,Esbjerg,Left-Back,18,200000,Denmark,images/profile_img/empty.jpg
+284,M. Rochester Sørensen,Silkeborg,Right Wing,27,200000,"Denmark, England",images/profile_img/empty.jpg
+285,S. Avanzini,KÍ,Attacking-Midfielder,24,200000,"Italy, Denmark",images/profile_img/empty.jpg
+286,N. Mirković,SønderjyskE,Goalkeeper,28,200000,Serbia,images/profile_img/empty.jpg
+287,S. Jakobsen,Hobro,Left Centre-Back,29,200000,Denmark,images/profile_img/empty.jpg
+288,P. Bjur,Brøndby,Right Wing,20,200000,Denmark,images/profile_img/empty.jpg
+289,O. Hedvall,Silkeborg,Goalkeeper,21,200000,Denmark,images/profile_img/empty.jpg
+290,V. Nambishi,Silkeborg,Right Wing,22,200000,"Zambia, Denmark",images/profile_img/empty.jpg
+291,M. Westergaard,Lyngby,Left-Back,21,200000,Denmark,images/profile_img/empty.jpg
+292,P. Gregor,Lyngby,Left Centre-Back,26,200000,Denmark,images/profile_img/empty.jpg
+293,O. Antman,Nordsjælland,Left Wing,18,150000,Finland,images/profile_img/empty.jpg
+294,M. Ørnskov,Lyngby,Left-Back,34,150000,Denmark,images/profile_img/empty.jpg
+295,O. Villadsen,Nordsjælland,Right-Back,18,150000,Denmark,images/profile_img/empty.jpg
+296,N. Gotfredsen,Hobro,Left-Back,31,150000,Denmark,images/profile_img/empty.jpg
+297,Y. Samuel,Hobro,Left-Back,22,150000,"Ethiopia, USA",images/profile_img/empty.jpg
+298,D. Obbekjær,OB,Centre-Back,17,150000,Denmark,images/profile_img/empty.jpg
+299,K. Kristensen,AGF,Goalkeeper,20,150000,Denmark,images/profile_img/empty.jpg
+300,M. Præst,Horsens,Striker,19,150000,Denmark,images/profile_img/empty.jpg
+301,J. Tjørnelund,Hobro,Left-Back,28,150000,Denmark,images/profile_img/empty.jpg
+302,B. Onkony,Hobro,Centre-Back,22,150000,"Switzerland, Congo DR",images/profile_img/empty.jpg
+303,R. Carstensen,Silkeborg,Right-Back,19,150000,Denmark,images/profile_img/empty.jpg
+304,S. Tengstedt,AaB,Left Wing,19,150000,Denmark,images/profile_img/empty.jpg
+305,J. Thomsen,Randers,Right-Back,37,100000,Denmark,images/profile_img/empty.jpg
+306,L. Klitten,AaB,Left Wing,19,100000,Denmark,images/profile_img/empty.jpg
+307,L. Nielsen,Lyngby,Centre-Back,32,100000,Denmark,images/profile_img/empty.jpg
+308,A. Heimer Hansen,Næstved,Attacking-Midfielder,22,100000,Denmark,images/profile_img/empty.jpg
+309,J. Mortensen,Esbjerg,Right-Back,19,100000,Denmark,images/profile_img/empty.jpg
+310,P. Nymann,Horsens,Right-Back,37,100000,Denmark,images/profile_img/empty.jpg
+311,N. Nurmi,Inter Turku,Defensive-Midfielder,19,100000,Finland,images/profile_img/empty.jpg
+312,H. Mahdi Hussein,Hobro,Striker,20,100000,Denmark,images/profile_img/empty.jpg
+313,T. Mikkelsen,Lyngby,Goalkeeper,36,100000,Denmark,images/profile_img/empty.jpg
+314,M. Frese,Nordsjælland,,21,50000,Denmark,images/profile_img/empty.jpg
+315,T. Chukwuani,Nordsjælland,Defensive-Midfielder,16,50000,Denmark,images/profile_img/empty.jpg
+316,S. Jørgensen,Silkeborg,Right Wing,19,50000,Denmark,images/profile_img/empty.jpg
+317,O. Haurits,Næstved,Striker,19,50000,Denmark,images/profile_img/empty.jpg
+318,R. Kakeeto,AaB,Defensive-Midfielder,24,50000,Uganda,images/profile_img/empty.jpg
+319,E. Tekşen,Lyngby,Left Wing,19,25000,Denmark,images/profile_img/empty.jpg
+320,A. Ben Slimane,Brøndby,Left-Back,18,25000,Denmark,images/profile_img/empty.jpg
+321,L. Deedson,Hobro,Left-Back,18,0,"Haiti, USA",images/profile_img/empty.jpg
+322,S. Piesinger,Randers,Centre-Back,27,0,Austria,images/profile_img/empty.jpg
+323,D. Flinta,Silkeborg,Centre-Back,36,0,Denmark,images/profile_img/empty.jpg
+324,M. Hansen,SønderjyskE,Attacking-Midfielder,18,0,Denmark,images/profile_img/empty.jpg
+325,E. Kornvig,Lyngby,Attacking-Midfielder,19,0,Denmark,images/profile_img/empty.jpg
+326,M. Hyllegaard,OB Res.,Striker,20,0,Denmark,images/profile_img/empty.jpg
