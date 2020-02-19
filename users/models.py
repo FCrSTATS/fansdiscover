@@ -11,3 +11,18 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class Player(models.Model):
+    objects = models.Manager()
+    pid = models.IntegerField(primary_key=True)
+    player = models.CharField(max_length=200)
+    team = models.CharField(max_length=200)
+    position = models.CharField(max_length=200)
+    age = models.IntegerField()
+    value = models.IntegerField()
+    nationality = models.CharField(max_length=400)
+    avi = models.URLField()
+
+    def __str__(self):
+        return self.player

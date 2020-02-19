@@ -29,11 +29,13 @@ urlpatterns = [
     path('reports', TemplateView.as_view(template_name='reports.html'), name='reports'),
     path('critical-questions', TemplateView.as_view(template_name='questions.html'), name='questions'),
     path('calibrate-opinion', TemplateView.as_view(template_name='calibrate.html'), name='calibrate'),
-    path('players/', TemplateView.as_view(template_name='players/players_index.html'), name='players_home'),
+  #  path('players/', TemplateView.as_view(template_name='players/players_index.html'), name='players_home'),
     path('kudus', TemplateView.as_view(template_name='players/kudus.html'), name='kudus'),
     # path('guide/', TemplateView.as_view(template_name='guide.html'), name='guide'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
-    url(r'^players/(?P<player>\w+)/$',views.player_profile, name="player_profile")
+    url('players',views.players, name="player_list"),
+    url(r'^player_profile/(?P<pid>\w+)/$',views.player_profile, name="player_profile")
+    
 ]

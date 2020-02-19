@@ -11,7 +11,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <img src="{% static '/images/profile_img/kudus.jpg' %}" class="rounded-circle mx-auto d-block" style = "border:2px solid #140000">
+    <img src="../../static/{{ contexts.avi }}" class="rounded-circle mx-auto d-block" style = "border:2px solid #140000">
   </div>
   <div class="col-md-3"></div>
 </div>
@@ -19,12 +19,16 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6 text-center">
-    <h1 style="color:#C9000A">{{ contexts.player }}</h1>
+    
+
+
+    <h1 style="color:#C9000A">{{ contexts.players }}</h1>
+
     <h3>Football Club</h3>
-    Position <br>
-    Nationality <br>
-    ?? yrs - DD-MM-YYYY
-    <h5>€ Market Value</h5>
+    {{ contexts.positions }} <br>
+    {{ contexts.nationalities }} <br>
+    {{ contexts.ages }} yrs
+    <h5>€ {{ contexts.market_values }}</h5>
   </div>
   <div class="col-md-3"></div>
 </div>

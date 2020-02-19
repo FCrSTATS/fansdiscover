@@ -14,9 +14,9 @@
 
 <p>List of Players</p>
 <ul>
- <li><a href = "/kudus">Mohammed Kudus</a></li>
- <li><a href = "#">Mikkel Damsgaard</a></li>
- <li><a href = "#">Lars McLarsson</a></li>
+    {% for player in contexts.players %}
+     <li><a href = "/player_profile/{{ player.pid }}">{{ player.player }}</a></li>
+ {% endfor %}
 </ul>
 
 
