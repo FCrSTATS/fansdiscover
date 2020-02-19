@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 
+
 from .forms import CustomUserCreationForm
 
 class SignUpView(CreateView):
@@ -17,3 +18,14 @@ class GuideView(CreateView):
     template_name = 'guide.html'
 
     
+def player_profile(request,player):
+    if request.method == "POST":
+        player = request.POST.get("player")
+        # backend check
+        print(player)
+        ## NEED TO CREATE PLAYER TABLE IN BACKED
+        
+
+    contexts = {"player":player}
+
+    return render(request, 'players/player_profile.html', {"contexts":contexts})
