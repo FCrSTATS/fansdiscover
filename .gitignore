@@ -1,5 +1,8 @@
 *env/
 *fd/pycache/
 *fd/migrations/
+*fd/__pycache__/
 *users/pycache/
 *users/migrations/
+*users/__pycache__/
+
