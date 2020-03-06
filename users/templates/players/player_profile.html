@@ -1,6 +1,7 @@
 {% extends 'main_base.html' %}
 {% load static %}
 
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
@@ -92,7 +93,8 @@
 
   <div class="form-group">
     <label for="exampleFormControlInput1"><b>Player</b></label>
-    <input class="form-control" id="exampleFormControlInput1" placeholder="## have the player's name alraedy appear here">
+    <h5>{{contexts.players}}</h5>
+    <!-- <input class="form-control" id="exampleFormControlInput1" placeholder="## have the player's name alraedy appear here"> -->
   </div>
 
   <div class="form-group">
@@ -113,7 +115,7 @@
       <h5 class="card-title">Decide on Your Scores</h5>
       <p></p>
       <b>Performance Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="performance-score">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -129,7 +131,7 @@
 
       <p></p>
       <b>Potential Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="potential-score">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -145,7 +147,7 @@
       <p></p>
 
       <b>Value Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="value-score">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -159,11 +161,10 @@
       <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
       </select>
 
-
       <p></p>
       <p>Need help remembering the <a href="#">Scoring System</a> ( opens in new tab )</p>
       <!-- <br> -->
-      <button type="button" class="btn btn-success">Submit Report</button>
+      <button type="button" class="btn btn-success submit-report" id="submit-report">Submit Report</button>
       <p></p>
 
             </form>
@@ -190,3 +191,38 @@
   {% endif %}
   {% endblock %}
 </div>
+
+<script>
+    jQuery(document).ready( function () {  
+      jQuery("#submit-report").on("click", function() {
+        console.log("button clicked");
+        var player = "{{ contexts.players }}";
+        var username = "{{user.username}}";
+        var performance = document.getElementById("#performance-score");
+        var potential = document.getElementById("#potential-score");
+        var value_score = document.getElementById("#value-score");
+        var match_date = document.getElementById("#exampleFormControlInput23");
+        var opp = document.getElementById("#exampleFormControlInput2");
+        var report = document.getElementById("#exampleFormControlTextarea1");
+        jQuery.ajax({
+                type: "POST",
+                url: 'post_report/{{user.username}}/',
+                data: { 'username' : "{{user.username}}",
+                        'player'  : player,
+                        'match_date':match_date,
+                        'opposition':opp,
+                        'report':report,
+                        'performance':performance,
+                        'potential':potential,
+                        'value_score':value_score,
+                        'csrfmiddlewaretoken': '{{csrf_token}}' },
+                success: function(data){
+                    var data = data;
+                    console.log(data);
+                    
+                }
+            });
+        })
+      });
+  
+          </script>

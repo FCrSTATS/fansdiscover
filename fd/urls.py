@@ -36,6 +36,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
     url('players',views.players, name="player_list"),
-    url(r'^player_profile/(?P<pid>\w+)/$',views.player_profile, name="player_profile")
+    url(r'^player_profile/(?P<pid>\w+)/$',views.player_profile, name="player_profile"),
+    url(r'^post_report/(?P<username>\w+)/$', views.post_report, name="post_report")
     
 ]
