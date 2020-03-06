@@ -53,19 +53,29 @@ def player_profile(request,pid):
         form = ReportForm(request.POST)
         if form.is_valid():
             report = Report()
+            person = Player()
+            
             # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
             report.user = request.user
-            report.player = form.cleaned_data['player']
+            p_name = player
+            p_name = person.__class__.objects.only('pid').get(player=p_name)
+            report.rid = len(Report.objects.all())+1
+            report.player = p_name
             report.opponent = form.cleaned_data['opponent']
             report.date = form.cleaned_data['date']
             report.report = form.cleaned_data['report']
             report.performance_score = form.cleaned_data['performance_score']
             report.potential_score = form.cleaned_data['potential_score']
             report.value_score = form.cleaned_data['value_score']
+            print(report.report)
             report.save()
             print("report data saved")
             # redirect to a new URL:
-            return HttpResponseRedirect(reverse('/') )
+            players = Player.objects.all()
+            contexts = {"players":players}
+
+            return render(request, 'players/players_index.html', {"contexts":contexts})
+
 
     # If this is a GET (or any other method) create the default form.
     else:
@@ -74,10 +84,11 @@ def player_profile(request,pid):
                     "nationalities":nationality,"ages":age,"market_values":market_value,
                     "avi":avi, "form":form}
 
-    return render(request, 'players/player_profile.html', {"contexts":contexts})
+        return render(request, 'players/player_profile.html', {"contexts":contexts})
 
 def post_report(request,username):
     rep = {}
+
     if request.method == "POST":
         username = request.POST.get("username")
         player = request.POST.get("player")

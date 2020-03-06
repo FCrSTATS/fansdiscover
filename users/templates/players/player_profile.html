@@ -175,10 +175,17 @@
     </div>
   </div>
 
-
 </div>
 
 <br><br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ contexts.form.as_p}}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+
 
 <div class="container">
   {% if user.is_authenticated %}
@@ -209,12 +216,6 @@
                 url: 'post_report/{{user.username}}/',
                 data: { 'username' : "{{user.username}}",
                         'player'  : player,
-                        'match_date':match_date,
-                        'opposition':opp,
-                        'report':report,
-                        'performance':performance,
-                        'potential':potential,
-                        'value_score':value_score,
                         'csrfmiddlewaretoken': '{{csrf_token}}' },
                 success: function(data){
                     var data = data;
