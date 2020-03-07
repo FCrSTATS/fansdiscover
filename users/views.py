@@ -101,9 +101,10 @@ def player_profile(request,pid):
 
             # Create success boolean and add to contexts to inform user
             success = True
+            form = ReportForm
             contexts = {"players":player,"positions":position,
                     "nationalities":nationality,"ages":age,"market_values":market_value,
-                    "avi":avi, "success":success}
+                    "avi":avi, "success":success,"form":form}
             return render(request, 'players/player_profile.html', {"contexts":contexts})
 
     # If this is a GET (or any other method) create the default form.
