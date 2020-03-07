@@ -1,12 +1,19 @@
 {% extends 'main_base.html' %}
 {% load static %}
 
-
 {% block title %}Home{% endblock %}
-
 {% block content %}
 
-
+{% if contexts.success == True %}
+<div style="background:#83de9b;">
+<p style="color:white;font-weight:bold;font-size:30px;padding-left:5%;">Report Successfully Submitted</p>
+</div>
+{% elif contexts.report_exists == True %}
+<div style="background:#e9bd5f;">
+    <p style="color:white;font-weight:bold;font-size:30px;padding-left:5%;">You have already submitted a report for this match</p>
+    </div>
+    
+{% endif %}
 <br>
 
 <div class="row">
@@ -20,7 +27,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6 text-center">
-    
+
 
 
     <h1 style="color:#C9000A">{{ contexts.players }}</h1>
@@ -84,107 +91,35 @@
 
 </div> <!-- end of report card group -->
 
-
-<div class="card-group"> <!-- start of report card group -->
-
-  <div class="card">
-    <div class="card-body">
-      <form class="" action="" method="post">
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1"><b>Player</b></label>
-    <h5>{{contexts.players}}</h5>
-    <!-- <input class="form-control" id="exampleFormControlInput1" placeholder="## have the player's name alraedy appear here"> -->
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput2"><b>Opponent</b></label>
-    <input class="form-control" id="exampleFormControlInput2" placeholder="#todo - ideally add a list of possible clubs">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput3"><b>Match Date</b></label>
-    <input class="form-control" id="exampleFormControlInput23" placeholder="DD-MM-YYYY #todo - add date picker">
-  </div>
-
-  <div class="form-group">
-  <label for="exampleFormControlTextarea1"><b>Match Report</b></label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-
-      <h5 class="card-title">Decide on Your Scores</h5>
-      <p></p>
-      <b>Performance Score</b>
-      <select class="browser-default custom-select" id="performance-score">
-      <option selected>Entry your score...</option>
-      <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
-      <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
-      <option value="8">&nbsp;8 &nbsp;- &nbsp;Big 5 Squad Player</option>
-      <option value="7">&nbsp;7 &nbsp;- &nbsp;Bel / Hol / Port</option>
-      <option value="6">&nbsp;6 &nbsp;- &nbsp;DK Superliga Key Player</option>
-      <option value="5">&nbsp;5 &nbsp;- &nbsp;DK Superliga Starter</option>
-      <option value="4">&nbsp;4 &nbsp;- &nbsp;DK Superliga Squad Player</option>
-      <option value="3">&nbsp;3 &nbsp;- &nbsp;2nd Tier Scandinavia</option>
-      <option value="2">&nbsp;2 &nbsp;- &nbsp;Unlikely to Play Pro.</option>
-      <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
-      </select>
-
-      <p></p>
-      <b>Potential Score</b>
-      <select class="browser-default custom-select" id="potential-score">
-      <option selected>Entry your score...</option>
-      <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
-      <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
-      <option value="8">&nbsp;8 &nbsp;- &nbsp;Big 5 Squad Player</option>
-      <option value="7">&nbsp;7 &nbsp;- &nbsp;Bel / Hol / Port</option>
-      <option value="6">&nbsp;6 &nbsp;- &nbsp;DK Superliga Key Player</option>
-      <option value="5">&nbsp;5 &nbsp;- &nbsp;DK Superliga Starter</option>
-      <option value="4">&nbsp;4 &nbsp;- &nbsp;DK Superliga Squad Player</option>
-      <option value="3">&nbsp;3 &nbsp;- &nbsp;2nd Tier Scandinavia</option>
-      <option value="2">&nbsp;2 &nbsp;- &nbsp;Unlikely to Play Pro.</option>
-      <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
-      </select>
-      <p></p>
-
-      <b>Value Score</b>
-      <select class="browser-default custom-select" id="value-score">
-      <option selected>Entry your score...</option>
-      <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
-      <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
-      <option value="8">&nbsp;8 &nbsp;- &nbsp;Big 5 Squad Player</option>
-      <option value="7">&nbsp;7 &nbsp;- &nbsp;Bel / Hol / Port</option>
-      <option value="6">&nbsp;6 &nbsp;- &nbsp;DK Superliga Key Player</option>
-      <option value="5">&nbsp;5 &nbsp;- &nbsp;DK Superliga Starter</option>
-      <option value="4">&nbsp;4 &nbsp;- &nbsp;DK Superliga Squad Player</option>
-      <option value="3">&nbsp;3 &nbsp;- &nbsp;2nd Tier Scandinavia</option>
-      <option value="2">&nbsp;2 &nbsp;- &nbsp;Unlikely to Play Pro.</option>
-      <option value="1">&nbsp;1 &nbsp;- &nbsp;Amateur Career</option>
-      </select>
-
-      <p></p>
-      <p>Need help remembering the <a href="#">Scoring System</a> ( opens in new tab )</p>
-      <!-- <br> -->
-      <button type="button" class="btn btn-success submit-report" id="submit-report">Submit Report</button>
-      <p></p>
-
-            </form>
-
-    </div>
-    <div class="card-footer">
-      <!-- <small class="text-muted"></small> -->
-    </div>
-  </div>
-
-</div>
-
-<br><br><br>
+<!-- report card start  -->
+<div class="card">
+  <div class="card-body">
+<h1 style="color:#C9000A">Add your report:</h1>
 <form action="" method="post">
     {% csrf_token %}
+    {% load widget_tweaks %}
     <table>
-        {{ contexts.form.as_p}}
+      <br>
+      <div><b>Opponent</b>{% render_field contexts.form.opponent class+="form-control" placeholder+="add the opponent" %}</div>
+      <br>
+      <div><b>Date</b>{% render_field contexts.form.date class+="form-control" placeholder+="YYYY-MM-DD" %}</div>
+      {% for error in contexts.form.date.errors %}
+         <p class="text-danger">{{error}}</p>
+      {% endfor %}
+      <br>
+      <div><b>Report</b>{% render_field contexts.form.report class+="form-control"%}</div>
+        <br>
+        <div><b>Performance Score</b>{% render_field contexts.form.performance_score class+="browser-default custom-select"%}</div>
+        <br>
+        <div><b>Potential Score</b>{% render_field contexts.form.potential_score class+="browser-default custom-select"%}</div>
+        <br>
+        <div><b>Value Score</b>{% render_field contexts.form.value_score class+="browser-default custom-select"%}</div>
     </table>
-    <input type="submit" value="Submit">
+    <br>
+    <input type="submit" class="btn btn-success submit-report" value="Submit Report">
   </form>
+</div></div> <!-- end of report card -->
+
 
 
 <div class="container">
@@ -199,31 +134,34 @@
   {% endblock %}
 </div>
 
+
+
+
 <script>
-    jQuery(document).ready( function () {  
-      jQuery("#submit-report").on("click", function() {
-        console.log("button clicked");
-        var player = "{{ contexts.players }}";
-        var username = "{{user.username}}";
-        var performance = document.getElementById("#performance-score");
-        var potential = document.getElementById("#potential-score");
-        var value_score = document.getElementById("#value-score");
-        var match_date = document.getElementById("#exampleFormControlInput23");
-        var opp = document.getElementById("#exampleFormControlInput2");
-        var report = document.getElementById("#exampleFormControlTextarea1");
-        jQuery.ajax({
-                type: "POST",
-                url: 'post_report/{{user.username}}/',
-                data: { 'username' : "{{user.username}}",
-                        'player'  : player,
-                        'csrfmiddlewaretoken': '{{csrf_token}}' },
-                success: function(data){
-                    var data = data;
-                    console.log(data);
-                    
-                }
-            });
-        })
-      });
-  
+    // jQuery(document).ready( function () {
+    //   jQuery("#submit-report").on("click", function() {
+    //     console.log("button clicked");
+    //     var player = "{{ contexts.players }}";
+    //     var username = "{{user.username}}";
+    //     var performance = document.getElementById("#performance-score");
+    //     var potential = document.getElementById("#potential-score");
+    //     var value_score = document.getElementById("#value-score");
+    //     var match_date = document.getElementById("#exampleFormControlInput23");
+    //     var opp = document.getElementById("#exampleFormControlInput2");
+    //     var report = document.getElementById("#exampleFormControlTextarea1");
+    //     jQuery.ajax({
+    //             type: "POST",
+    //             url: 'post_report/{{user.username}}/',
+    //             data: { 'username' : "{{user.username}}",
+    //                     'player'  : player,
+    //                     'csrfmiddlewaretoken': '{{csrf_token}}' },
+    //             success: function(data){
+    //                 var data = data;
+    //                 console.log(data);
+
+    //             }
+    //         });
+    //     })
+    //   });
+
           </script>

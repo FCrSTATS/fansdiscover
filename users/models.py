@@ -31,12 +31,15 @@ class Report(models.Model):
     objects = models.Manager()
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    rid = models.IntegerField(serialize=True)
+    rid = models.CharField(max_length=1000)
     opponent = models.CharField(max_length=200)
     date = models.DateField()
     report = models.TextField(max_length=100000)
     performance_score = models.FloatField()
     potential_score = models.FloatField()
     value_score = models.FloatField()
+
+    def __str__(self):
+        return self.player.player+"_"+self.user.username+"_"+str(self.date)
     
     

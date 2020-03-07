@@ -1,6 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.core.exceptions import ValidationError
 from .models import CustomUser, Report
+
+import datetime
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -31,6 +34,7 @@ VAL_CHOICES= [
 
 class ReportForm(forms.Form):
 
+
     opponent = forms.CharField(max_length=200, required=True)
     date = forms.CharField(max_length=200, required=True)
     report = forms.CharField(widget=forms.Textarea)
@@ -43,4 +47,14 @@ class ReportForm(forms.Form):
         fields = ("player","opponent",
                   "date","report","performance_score",
                   "potential_score","value_score")
+
+    def clean_date(self):
+        data = self.cleaned_data['date']
+
+        try:
+            datetime.datetime.strptime(data, '%Y-%m-%d')
+        except Exception:
+            raise ValidationError("Incorrect date format, should be YYYY-MM-DD")
+
+        return data
 

@@ -3,7 +3,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
+from django.contrib import messages
 import json
+import base64
 
 
 from .forms import CustomUserCreationForm, ReportForm
@@ -45,6 +47,13 @@ def player_profile(request,pid):
     avi = Player.objects.filter(pid=pid).values("avi")[0]['avi']
     print("player is {}".format(player))
 
+    
+    # Getting list of report identifiers to prevent users creating 
+    # duplicates for same player in same match
+    rids = Report.objects.all().values('rid')
+    existing_reports = []
+    for r in rids:
+        existing_reports.append(r['rid'])
 
 
     ### FORM HANDLING:
@@ -55,11 +64,32 @@ def player_profile(request,pid):
             report = Report()
             person = Player()
             
-            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
+            # getting data to create rid
+            username = request.user.username
+            player_name = player
+            p_name = person.__class__.objects.only('pid').get(player=player_name)
+            date = form.cleaned_data['date']
+            date_string = str(date)
+            report_string = player_name+"_"+username+"_"+date_string
+            # converting report_string to base64
+            report_string = report_string.encode('ascii')
+            base64_bytes = base64.b64encode(report_string)
+            base64_message = base64_bytes.decode('ascii')
+
+            # if user report for this player in this match exists
+            # reload page and add report_exists to contexts
+            # so we can warn users.
+            if base64_message in existing_reports:
+                report_exists = True
+                form = ReportForm    
+                contexts = {"players":player,"positions":position,
+                                "nationalities":nationality,"ages":age,"market_values":market_value,
+                                "avi":avi, "form":form,"report_exists":report_exists}
+                return render(request, 'players/player_profile.html', {"contexts":contexts})
+            
+            # if rid does not exist, continue adding to Report model.
             report.user = request.user
-            p_name = player
-            p_name = person.__class__.objects.only('pid').get(player=p_name)
-            report.rid = len(Report.objects.all())+1
+            report.rid = base64_message
             report.player = p_name
             report.opponent = form.cleaned_data['opponent']
             report.date = form.cleaned_data['date']
@@ -67,24 +97,28 @@ def player_profile(request,pid):
             report.performance_score = form.cleaned_data['performance_score']
             report.potential_score = form.cleaned_data['potential_score']
             report.value_score = form.cleaned_data['value_score']
-            print(report.report)
             report.save()
-            print("report data saved")
-            # redirect to a new URL:
-            players = Player.objects.all()
-            contexts = {"players":players}
 
-            return render(request, 'players/players_index.html', {"contexts":contexts})
-
+            # Create success boolean and add to contexts to inform user
+            success = True
+            contexts = {"players":player,"positions":position,
+                    "nationalities":nationality,"ages":age,"market_values":market_value,
+                    "avi":avi, "success":success}
+            return render(request, 'players/player_profile.html', {"contexts":contexts})
 
     # If this is a GET (or any other method) create the default form.
     else:
-        form = ReportForm
+        form = ReportForm    
         contexts = {"players":player,"positions":position,
-                    "nationalities":nationality,"ages":age,"market_values":market_value,
-                    "avi":avi, "form":form}
+                        "nationalities":nationality,"ages":age,"market_values":market_value,
+                        "avi":avi, "form":form}
 
         return render(request, 'players/player_profile.html', {"contexts":contexts})
+   # form = ReportForm   
+    contexts = {"players":player,"positions":position,
+                    "nationalities":nationality,"ages":age,"market_values":market_value,
+                    "avi":avi, "form":form}
+    return render(request, 'players/player_profile.html', {"contexts":contexts})
 
 def post_report(request,username):
     rep = {}
