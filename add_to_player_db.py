@@ -1,7 +1,7 @@
 import csv
 from users.models import Player
 
-with open("cleaned_player_db.csv") as f:
+with open("cleaned_player_db_new.csv") as f:
     reader = csv.reader(f)
     for row in reader:
         _, created = Player.objects.get_or_create(
@@ -13,4 +13,10 @@ with open("cleaned_player_db.csv") as f:
             value=row[5],
             nationality=row[6],
             avi=row[7],
+            create=row[8],
+            dribble=row[9],
+            maintain=row[10],
+            finish=row[11]
             )
+
+#Player.objects.update()

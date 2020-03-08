@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.urls import reverse_lazy
@@ -8,9 +8,9 @@ import json
 import base64
 
 
-from .forms import CustomUserCreationForm, ReportForm
+from .forms import CustomUserCreationForm, ReportForm, CalibrationForm
 
-from .models import Player, Report
+from .models import Player, Report, Calibration
 from django.db.models import Q
 
 
@@ -42,6 +42,7 @@ def player_profile(request,pid):
     player = Player.objects.filter(pid=pid).values("player")[0]['player']
     position = Player.objects.filter(pid=pid).values("position")[0]['position']
     nationality = Player.objects.filter(pid=pid).values("nationality")[0]['nationality']
+    team = Player.objects.filter(pid=pid).values("team")[0]['team']
     age = Player.objects.filter(pid=pid).values("age")[0]['age']
     market_value = Player.objects.filter(pid=pid).values("value")[0]['value']
     avi = Player.objects.filter(pid=pid).values("avi")[0]['avi']
@@ -81,8 +82,8 @@ def player_profile(request,pid):
             # so we can warn users.
             if base64_message in existing_reports:
                 report_exists = True
-                form = ReportForm    
-                contexts = {"players":player,"positions":position,
+                #form = ReportForm    
+                contexts = {"players":player,"positions":position,"teams": team,
                                 "nationalities":nationality,"ages":age,"market_values":market_value,
                                 "avi":avi, "form":form,"report_exists":report_exists}
                 return render(request, 'players/player_profile.html', {"contexts":contexts})
@@ -102,7 +103,7 @@ def player_profile(request,pid):
             # Create success boolean and add to contexts to inform user
             success = True
             form = ReportForm
-            contexts = {"players":player,"positions":position,
+            contexts = {"players":player,"positions":position, "teams":team,
                     "nationalities":nationality,"ages":age,"market_values":market_value,
                     "avi":avi, "success":success,"form":form}
             return render(request, 'players/player_profile.html', {"contexts":contexts})
@@ -110,41 +111,75 @@ def player_profile(request,pid):
     # If this is a GET (or any other method) create the default form.
     else:
         form = ReportForm    
-        contexts = {"players":player,"positions":position,
+        contexts = {"players":player,"positions":position,"teams":team,
                         "nationalities":nationality,"ages":age,"market_values":market_value,
                         "avi":avi, "form":form}
 
         return render(request, 'players/player_profile.html', {"contexts":contexts})
    # form = ReportForm   
-    contexts = {"players":player,"positions":position,
+    contexts = {"players":player,"positions":position, "teams":team,    
                     "nationalities":nationality,"ages":age,"market_values":market_value,
                     "avi":avi, "form":form}
     return render(request, 'players/player_profile.html', {"contexts":contexts})
 
-def post_report(request,username):
-    rep = {}
 
+def send_calibration(request):
     if request.method == "POST":
-        username = request.POST.get("username")
-        player = request.POST.get("player")
-        opponent = request.POST.get("opponent")
-        date = request.POST.get("date")
-        user_report = request.POST.get("report")
-        performance = request.POST.get("performance")
-        potential = request.POST.get("potential")
-        value_score = request.POST.get("value_score")
+        user = request.user
+        username = user.username
+        scores = request.POST.get("scores")
+        
+        if "Entry" in scores:
+            print("Entry is in scores")
+            error = True
+            contexts = {"error":error}
+            return HttpResponseRedirect('/calibrate-opinion', {"contexts":contexts})
+        
+        calibrate = Calibration()
+        calibrate.user = user
+        calibrate.calibration_array = scores
+        calibrate.save()
 
-        report = Report()
-        report.player = player
-        report.opponent = opponent
-        report.date = date
-        report.report = user_report
-        report.performance_score = performance
-        report.potential_score = potential
-        report.value_score = value_score
-        report.save()
-        print("report data saved")
-        rep = {"username":username,"player":player}
-        return HttpResponse(json.dumps(rep), content_type="application/json")
-    
-    return HttpResponse(json.dumps(rep), content_type="application/json")
+        print(scores)
+
+        a_dict = {"user":username, "scores":scores}
+
+        return HttpResponse(json.dumps(a_dict), content_type="application/json")
+
+        
+
+
+def calibration(request):
+        
+    if request.method == 'POST':
+        form = CalibrationForm(request.POST)
+        if form.is_valid():
+            calibration = Calibration()
+            # getting data to create rid
+            username = request.user.username
+            
+            # if rid does not exist, continue adding to Report model.
+            calibration.user = request.user
+            calibration.performance_score = form.cleaned_data['performance_score']
+            calibration.potential_score = form.cleaned_data['potential_score']
+            calibration.value_score = form.cleaned_data['value_score']
+            calibration.save()
+
+            """# Create success boolean and add to contexts to inform user
+            success = True
+            form = ReportForm
+            contexts = {"players":player,"positions":position, "teams":team,
+                    "nationalities":nationality,"ages":age,"market_values":market_value,
+                    "avi":avi, "success":success,"form":form}
+            return render(request, 'players/player_profile.html', {"contexts":contexts})
+            """
+        # If this is a GET (or any other method) create the default form.
+        else:
+            form = CalibrationForm    
+            contexts = {"form":form}
+            return render(request, 'calibrate.html', {"contexts":contexts})
+    form = CalibrationForm   
+    contexts = {"form":form}
+    return render(request, 'calibrate.html', {"contexts":contexts})
+
+

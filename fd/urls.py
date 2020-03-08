@@ -28,7 +28,7 @@ urlpatterns = [
     path('scoring-system', TemplateView.as_view(template_name='scoring.html'), name='scoring'),
     path('reports', TemplateView.as_view(template_name='reports.html'), name='reports'),
     path('critical-questions', TemplateView.as_view(template_name='questions.html'), name='questions'),
-    path('calibrate-opinion', TemplateView.as_view(template_name='calibrate.html'), name='calibrate'),
+    path('calibrate-opinion', views.calibration, name='calibrate'),
   #  path('players/', TemplateView.as_view(template_name='players/players_index.html'), name='players_home'),
     path('kudus', TemplateView.as_view(template_name='players/kudus.html'), name='kudus'),
     # path('guide/', TemplateView.as_view(template_name='guide.html'), name='guide'),
@@ -37,6 +37,6 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     url('players',views.players, name="player_list"),
     url(r'^player_profile/(?P<pid>\w+)/$',views.player_profile, name="player_profile"),
-    url(r'^post_report/(?P<username>\w+)/$', views.post_report, name="post_report")
+    url(r'^send_calibration/$', views.send_calibration, name="send_calibration")
     
 ]

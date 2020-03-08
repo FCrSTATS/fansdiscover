@@ -22,6 +22,10 @@ class Player(models.Model):
     age = models.IntegerField()
     value = models.IntegerField()
     nationality = models.CharField(max_length=400)
+    create = models.IntegerField()
+    dribble = models.IntegerField()
+    maintain = models.IntegerField()
+    finish =models.IntegerField()
     avi = models.URLField()
 
     def __str__(self):
@@ -42,4 +46,8 @@ class Report(models.Model):
     def __str__(self):
         return self.player.player+"_"+self.user.username+"_"+str(self.date)
     
-    
+
+class Calibration(models.Model):
+    objects = models.Manager()
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    calibration_array = models.CharField(max_length=200)

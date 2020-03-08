@@ -5,6 +5,55 @@
 
 {% block content %}
 
+
+<script>
+    $( document ).ready(function() {
+      $( "button" ).on( "click", function() {
+        var s1 = $( "#s1" ).val()
+        var s2 = $( "#s2" ).val()
+        var s3 = $( "#s3" ).val()
+        var s4 = $( "#s4" ).val()
+        var s5 = $( "#s5" ).val()
+        var s6 = $( "#s6" ).val()
+        var s7 = $( "#s7" ).val()
+        var s8 = $( "#s8" ).val()
+        var s9 = $( "#s9" ).val()
+        var s10 = $( "#s10" ).val()
+        var s11 = $( "#s11" ).val()
+        var s12 = $( "#s12" ).val()
+        var s13 = $( "#s13" ).val()
+        var s14 = $( "#s14" ).val()
+        var s15 = $( "#s15" ).val()
+        var s16 = $( "#s16" ).val()
+        var s17 = $( "#s17" ).val()
+        var s18 = $( "#s18" ).val() 
+        document.getElementById("array-holder").innerHTML = [s1,s2,s3,s4,s5,s6,s7,s8 ,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18];
+        var scores = document.getElementById("array-holder").innerHTML
+        var error_message = document.getElementById("error-message")
+        var success_message = document.getElementById("success-message")
+        if (scores.includes('Entry')) {
+          error_message.style.display = "block"
+        } else {
+          error_message.style.display = "none"
+          console.log(scores)
+          jQuery.ajax({
+                      type: "POST",
+                      url: 'send_calibration/',
+                      data: { 'scores'  : scores,
+                              'csrfmiddlewaretoken': '{{csrf_token}}' },
+                      success: function(data){
+                          var data = data;
+                          console.log(data);
+                          success_message.style.display = "block";
+                      }
+          })
+        };
+        });
+        return False
+      });
+</script>
+
+
 <br>
 <h2 id = "positions_anchor">Resources: Calibrating Your Opinion</h2>
 <br>
@@ -31,7 +80,7 @@
       <!-- Add scoring form -->
       <p></p>
       <b>Performance Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s1">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -48,7 +97,7 @@
 
       <p></p>
       <b>Potential Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s2">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -64,7 +113,7 @@
       <p></p>
 
       <b>Value Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s3">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -80,7 +129,7 @@
 
       <br>
       <p></p>
-      <button type="button" class="btn btn-outline-danger">Submit</button>
+      <!--<button type="button" class="btn btn-outline-danger">Submit</button>-->
       <p></p>
       <!-- end of scoring form  -->
 
@@ -104,7 +153,7 @@
       <!-- Add scoring form -->
       <p></p>
       <b>Performance Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s4">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -120,7 +169,7 @@
 
       <p></p>
       <b>Potential Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s5">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -136,7 +185,7 @@
       <p></p>
 
       <b>Value Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s6">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -152,7 +201,7 @@
 
       <br>
       <p></p>
-      <button type="button" class="btn btn-outline-danger">Submit</button>
+      <!--<button type="button" class="btn btn-outline-danger">Submit</button>-->
       <p></p>
       <!-- end of scoring form  -->
 
@@ -179,7 +228,7 @@
 
       <p></p>
       <b>Performance Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s7">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -196,7 +245,7 @@
 
       <p></p>
       <b>Potential Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s8">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -212,7 +261,7 @@
       <p></p>
 
       <b>Value Score</b>
-      <select class="browser-default custom-select">
+      <select class="browser-default custom-select" id="s9">
       <option selected>Entry your score...</option>
       <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
       <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -228,7 +277,7 @@
 
       <br>
       <p></p>
-      <button type="button" class="btn btn-outline-danger">Submit</button>
+      <!--<button type="button" class="btn btn-outline-danger">Submit</button>-->
       <p></p>
       <!-- end of scoring form  -->
 
@@ -260,7 +309,7 @@
 
                 <p></p>
                 <b>Performance Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s10">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -277,7 +326,7 @@
 
                 <p></p>
                 <b>Potential Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s11">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -293,7 +342,7 @@
                 <p></p>
 
                 <b>Value Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s12">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -309,7 +358,7 @@
 
                 <br>
                 <p></p>
-                <button type="button" class="btn btn-outline-danger">Submit</button>
+                <!--<button type="button" class="btn btn-outline-danger">Submit</button>-->
                 <p></p>
                 <!-- end of scoring form  -->
 
@@ -337,7 +386,7 @@
 
                 <p></p>
                 <b>Performance Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s13">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -354,7 +403,7 @@
 
                 <p></p>
                 <b>Potential Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s14">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -370,7 +419,7 @@
                 <p></p>
 
                 <b>Value Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s15">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -386,7 +435,7 @@
 
                 <br>
                 <p></p>
-                <button type="button" class="btn btn-outline-danger">Submit</button>
+                <!--<button type="button" class="btn btn-outline-danger">Submit</button>-->
                 <p></p>
                 <!-- end of scoring form  -->
           </div>
@@ -411,7 +460,7 @@
 
                 <p></p>
                 <b>Performance Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s16">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -428,7 +477,7 @@
 
                 <p></p>
                 <b>Potential Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s17">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -444,7 +493,7 @@
                 <p></p>
 
                 <b>Value Score</b>
-                <select class="browser-default custom-select">
+                <select class="browser-default custom-select" id="s18">
                 <option selected>Entry your score...</option>
                 <option value="10">10 &nbsp;- &nbsp;World Class Talent</option>
                 <option value="9">&nbsp;9 &nbsp;- &nbsp;Big 5 Starter</option>
@@ -460,7 +509,7 @@
 
                 <br>
                 <p></p>
-                <button type="button" class="btn btn-outline-danger">Submit</button>
+                <!--<button type="button" class="btn btn-outline-danger">Submit</button>-->
                 <p></p>
                 <!-- end of scoring form  -->
 
@@ -485,6 +534,15 @@
             <p class="card-title">Once you have submited all of your scores... </p>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <button type="button" class="btn btn-danger">Submit All Scores for Calibration</button>
+            <p id="array-holder" style="display:none;"></p>
+            <br/>
+            <br/>
+            <div style="background:#C9000A; display:none;" id="error-message">
+              <p style="color:white;">You must select a score for every player</p>
+            </div>
+            <div style="background:#83de9b; display:none;" id="success-message">
+              <p style="color:white;">Calibration Submitted Successfully</p>
+            </div>
           </div>
         </div>
 

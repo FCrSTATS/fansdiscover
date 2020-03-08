@@ -31,9 +31,10 @@ VAL_CHOICES= [
     (1,"1 - Amateur Career")
     ]
 
+class CalibrationForm(forms.Form):
+    calibration_array = forms.CharField(max_length=200, required=True)
 
 class ReportForm(forms.Form):
-
 
     opponent = forms.CharField(max_length=200, required=True)
     date = forms.CharField(max_length=200, required=True)
