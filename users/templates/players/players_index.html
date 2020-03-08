@@ -11,14 +11,91 @@
 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 <hr>
+<form method="GET" action="">
+    <div class="sidebar-search">
+            <div>
+              <div class="input-group" style="margin-left:10vw; width:50vw;">
+                <input type="text" name="q" class="form-control search-menu" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+<br>
+<h5 class="card-title">Young Dribblers</h5>
 
-<p>List of Players</p>
-<ul>
+<div class="card-group">
+    {% for player in contexts.young_dribblers %}
+  <a href="/player_profile/{{ player.pid }}" style="text-decoration: none;">  
+  <div class="card" style="margin:10px;width:15em;height:15em;">
+    <div class="card-body">
+      <p class="card-text text-center" style="color:#C9000A;font-weight:bold;font-size:24px;"> {{ player.player }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.team }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.position }}</p>
+      <p class="card-text text-center" style="color:black;">€{{ player.value }}</p>
+
+    </div>
+  </div>
+  </a>
+  {% endfor %}
+</div>
+<br/>
+<h5 class="card-title">Old Finishers</h5>
+<div class="card-group">
+    {% for player in contexts.old_finishers %}
+  <a href="/player_profile/{{ player.pid }}" style="text-decoration: none;">  
+  <div class="card" style="margin:10px;width:15em;height:15em;">
+    <div class="card-body">
+      <p class="card-text text-center" style="color:#C9000A;font-weight:bold;font-size:24px;"> {{ player.player }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.team }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.position }}</p>
+      <p class="card-text text-center" style="color:black;">€{{ player.value }}</p>
+
+    </div>
+  </div>
+  </a>
+  {% endfor %}
+</div>
+<br/>
+<h5 class="card-title">Creation Kings</h5>
+<div class="card-group">
+    {% for player in contexts.creation_kings %}
+  <a href="/player_profile/{{ player.pid }}" style="text-decoration: none;">  
+  <div class="card" style="margin:10px;width:15em;height:15em;">
+    <div class="card-body">
+      <p class="card-text text-center" style="color:#C9000A;font-weight:bold;font-size:24px;"> {{ player.player }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.team }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.position }}</p>
+      <p class="card-text text-center" style="color:black;">€{{ player.value }}</p>
+
+    </div>
+  </div>
+  </a>
+  {% endfor %}
+</div>
+<br>
+<hr>
+<br/>
+<h5 class="card-title">All Players</h5>
+<div class="card-group">
     {% for player in contexts.players %}
-     <li><a href = "/player_profile/{{ player.pid }}">{{ player.player }}</a></li>
- {% endfor %}
-</ul>
+  <a href="/player_profile/{{ player.pid }}" style="text-decoration: none;">  
+  <div class="card" style="margin:10px;width:15em;height:15em;">
+    <div class="card-body">
+      <p class="card-text text-center" style="color:#C9000A;font-weight:bold;font-size:24px;"> {{ player.player }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.team }}</p>
+      <p class="card-text text-center" style="color:black;">{{ player.position }}</p>
+      <p class="card-text text-center" style="color:black;">€{{ player.value }}</p>
 
+    </div>
+  </div>
+  </a>
+  {% endfor %}
+</div>
 
 
 <div class="container">

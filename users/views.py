@@ -29,7 +29,76 @@ class GuideView(CreateView):
 
 def players(request):
     players = Player.objects.all()
-    contexts = {"players":players}
+
+    young_dribblers = Player.objects.filter(dribble__gte=90).filter(age__lte=20)
+   # dribblers = dribblers[:5]
+    old_finishers = Player.objects.filter(finish__gte=90).filter(age__gte=30)
+    creation_kings = Player.objects.filter(create__gte=90).filter(age__lte=20)
+
+
+    query = request.GET.get("q")
+    if query:
+        try:
+            q_id = Player.objects.filter(player__contains=query)
+            q_id = q_id.values()[0]['pid']
+            players = players.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)|
+                Q(pid=q_id)).distinct()
+        except IndexError:
+            players = players.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)).distinct()
+        
+        try:
+            q_id = Player.objects.filter(player__contains=query)
+            q_id = q_id.values()[0]['pid']
+            young_dribblers = young_dribblers.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)|
+                Q(pid=q_id)).distinct()
+        except IndexError:
+            young_dribblers = young_dribblers.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)).distinct()
+        
+        try:
+            q_id = Player.objects.filter(player__contains=query)
+            q_id = q_id.values()[0]['pid']
+            old_finishers = old_finishers.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)|
+                Q(pid=q_id)).distinct()
+        except IndexError:
+            old_finishers = old_finishers.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)).distinct()
+
+        try:
+            q_id = Player.objects.filter(player__contains=query)
+            q_id = q_id.values()[0]['pid']
+            creation_kings = creation_kings.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)|
+                Q(pid=q_id)).distinct()
+        except IndexError:
+            creation_kings = creation_kings.filter(
+                Q(player__icontains=query)|
+                Q(position__icontains=query)|
+                Q(team__icontains=query)).distinct()
+
+        
+
+
+    contexts = {"players":players, "young_dribblers":young_dribblers,
+                "old_finishers":old_finishers,"creation_kings":creation_kings}
 
     return render(request, 'players/players_index.html', {"contexts":contexts})
 
