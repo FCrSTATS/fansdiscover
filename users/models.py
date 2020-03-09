@@ -27,6 +27,7 @@ class Player(models.Model):
     maintain = models.IntegerField()
     finish =models.IntegerField()
     avi = models.URLField()
+    report_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.player
@@ -42,7 +43,7 @@ class Report(models.Model):
     performance_score = models.FloatField()
     potential_score = models.FloatField()
     value_score = models.FloatField()
-
+    
     def __str__(self):
         return self.player.player+"_"+self.user.username+"_"+str(self.date)
     

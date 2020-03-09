@@ -30,10 +30,30 @@ class GuideView(CreateView):
 def players(request):
     players = Player.objects.all()
 
-    young_dribblers = Player.objects.filter(dribble__gte=90).filter(age__lte=20)
-   # dribblers = dribblers[:5]
-    old_finishers = Player.objects.filter(finish__gte=90).filter(age__gte=30)
-    creation_kings = Player.objects.filter(create__gte=90).filter(age__lte=20)
+    # this is temporary. When a record gets deleted from the db through the
+    #  front end, the cound should be incremented in that way
+    for player in players:
+  #      pid = player.pid
+        report_counts = Report.objects.filter(player=player).count()
+  #      print("{}: {}".format(player.player,report_counts))
+        Player.objects.filter(player=player).update(report_count=report_counts)
+
+
+    #players = Player.objects.filter(report_count__lte=3)
+
+    young_dribblers = Player.objects.filter(report_count__lte=3).filter(age__lte=20).order_by('-dribble')[:10]
+    young_dribblers = Player.objects.filter(
+        pid__in=young_dribblers
+    )
+    old_finishers = Player.objects.filter(report_count__lte=3).filter(age__gte=30).order_by('-finish')[:10]
+    old_finishers = Player.objects.filter(
+        pid__in=old_finishers
+    )
+
+    creation_kings = Player.objects.filter(report_count__lte=3).filter(age__lte=20).order_by('-create')[:10]
+    creation_kings = Player.objects.filter(
+        pid__in=creation_kings
+    )
 
 
     query = request.GET.get("q")
@@ -168,6 +188,12 @@ def player_profile(request,pid):
             report.potential_score = form.cleaned_data['potential_score']
             report.value_score = form.cleaned_data['value_score']
             report.save()
+
+            # Need to increase the report_count in Player model
+            report_counts = Report.objects.filter(player=pid).count()
+            print(report_counts)
+            person = Player.objects.filter(player=player_name).update(report_count=report_counts)
+
 
             # Create success boolean and add to contexts to inform user
             success = True
