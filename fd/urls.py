@@ -26,7 +26,7 @@ urlpatterns = [
     path('guide', TemplateView.as_view(template_name='guide.html'), name='guide'),
     # path('critical-questions', TemplateView.as_view(template_name='questions.html'), name='questions'),
     path('scoring-system', TemplateView.as_view(template_name='scoring.html'), name='scoring'),
-    path('reports', TemplateView.as_view(template_name='reports.html'), name='reports'),
+  #  path('reports', TemplateView.as_view(template_name='reports.html'), name='reports'),
     path('critical-questions', TemplateView.as_view(template_name='questions.html'), name='questions'),
     path('calibrate-opinion', views.calibration, name='calibrate'),
   #  path('players/', TemplateView.as_view(template_name='players/players_index.html'), name='players_home'),
@@ -37,6 +37,10 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     url('players',views.players, name="player_list"),
     url(r'^player_profile/(?P<pid>\w+)/$',views.player_profile, name="player_profile"),
-    url(r'^send_calibration/$', views.send_calibration, name="send_calibration")
-    
+    url(r'^send_calibration/$', views.send_calibration, name="send_calibration"),
+    url(r'^admin-area/$', views.admin_area, name="admin-area"),
+    url(r'^send_admin_toggle/$', views.admin_toggle, name="admin-toggle"),
+    url(r'^reports/(?P<rid>\w+)/$', views.read_reports, name="reports"),
+    url(r'^reports/$', views.reports, name="reports"),
+    url(r'^delete_report/(?P<rid>\w+)/$', views.delete_report, name="delete_report"),
 ]

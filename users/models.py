@@ -13,6 +13,18 @@ class CustomUser(AbstractUser):
         return self.username
 
 
+class Admin(models.Model):
+    objects = models.Manager()
+    max_reports = models.IntegerField(default=0)
+    max_reports_toggle = models.BooleanField()
+    show_user_reports_number = models.BooleanField()
+    show_global_reports_number = models.BooleanField()
+    settings_instance = models.CharField(default="master", max_length=20)
+
+    def __str__(self):
+        return "Admin Backend Managment"
+
+
 class Player(models.Model):
     objects = models.Manager()
     pid = models.IntegerField(primary_key=True)

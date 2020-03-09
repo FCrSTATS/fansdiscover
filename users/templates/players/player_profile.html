@@ -48,8 +48,8 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title text-center">Your Reports</h5>
-      <h1 class="card-text text-center" style="color:#C9000A">1</h1>
-      <p class="card-text text-center">The player has <b>nn</b> reports from other scouts</p>
+      <h1 class="card-text text-center" style="color:#C9000A">{{ contexts.count_reports }}</h1>
+      <p class="card-text text-center">The player has <b>{{ contexts.global_count }}</b> reports from other scouts</p>
     </div>
     <!-- <div class="card-footer">
       <small class="text-muted"></small>
@@ -59,8 +59,8 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title text-center">Performance Score</h5>
-      <h1 class="card-text text-center" style="color:#C9000A">8.3</h1>
-      <p class="card-text text-center">The average score from other scouts is <b>nn</b></p>
+      <h1 class="card-text text-center" style="color:#C9000A">{{ contexts.user_avg_perf_score }}</h1>
+      <p class="card-text text-center">The average score from other scouts is <b>{{ contexts.global_perf_score }}</b></p>
     </div>
     <!-- <div class="card-footer"> -->
       <!-- <small class="text-muted"></small> -->
@@ -70,8 +70,8 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title text-center">Potential Score</h5>
-      <h1 class="card-text text-center" style="color:#C9000A">9.2</h1>
-      <p class="card-text text-center">The average score from other scouts is <b>nn</b></p>
+      <h1 class="card-text text-center" style="color:#C9000A">{{ contexts.user_avg_pot_score }}</h1>
+      <p class="card-text text-center">The average score from other scouts is <b>{{ contexts.global_pot_score }}</b></p>
     </div>
     <!-- <div class="card-footer"> -->
       <!-- <small class="text-muted"></small> -->
@@ -81,8 +81,8 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title text-center">Value Score</h5>
-      <h1 class="card-text text-center" style="color:#C9000A">6.7</h1>
-      <p class="card-text text-center">The average score from other scouts is <b>nn</b></p>
+      <h1 class="card-text text-center" style="color:#C9000A">{{ contexts.user_avg_val_score }}</h1>
+      <p class="card-text text-center">The average score from other scouts is <b>{{ contexts.global_val_score }}</b></p>
     </div>
     <!-- <div class="card-footer"> -->
       <!-- <small class="text-muted"></small> -->

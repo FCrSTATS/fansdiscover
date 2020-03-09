@@ -1,0 +1,67 @@
+{% extends 'main_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+
+<!-- ADMIN VIEW HERE -->
+
+{% if user.is_superuser %}
+
+{{ contexts.reports.player }}
+<br/>
+{{ contexts.reports.date }}
+<br/>
+{{ contexts.reports.opponent }}
+<br/>
+{{ contexts.reports.performance_score }}
+<br/>
+{{ contexts.reports.potential_score }}
+<br/>
+{{ contexts.reports.value_score }}
+<br/>
+{{ contexts.reports.report}}
+<br/>
+<a href="/delete_report/{{contexts.reports.rid}}">delete report</a>
+
+ <!-- USER VIEW HERE -->
+{% elif user == contexts.reports.user %}
+
+{{ contexts.reports.player }}
+<br/>
+{{ contexts.reports.date }}
+<br/>
+{{ contexts.reports.opponent }}
+<br/>
+{{ contexts.reports.performance_score }}
+<br/>
+{{ contexts.reports.potential_score }}
+<br/>
+{{ contexts.reports.value_score }}
+<br/>
+{{ contexts.reports.report }}
+
+
+
+
+
+
+<!-- OTHERWISE NONE -->
+{% else %}
+
+<div class="container">
+        {% if user.is_authenticated %}
+          Hi {{ user.username }}!
+          <p><a href="{% url 'logout' %}">logout</a></p>
+        {% else %}
+          <p>You are not logged in</p>
+          <a href="{% url 'login' %}">login</a> |
+          <a href="{% url 'signup' %}">signup</a>
+        {% endif %}
+      </div>
+{% endif %}      
+
+{% endblock %}
+

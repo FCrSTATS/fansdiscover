@@ -38,6 +38,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
+        {% if user.is_superuser %}
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-area">Admin Area</a>
+        {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="/players">Players</a>
         </li>

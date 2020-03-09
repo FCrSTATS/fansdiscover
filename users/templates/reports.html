@@ -15,7 +15,15 @@
 
 <div class="container">
   {% if user.is_authenticated %}
-    Hi {{ user.username }}!
+    Hi {{ user.username }} here are your reports!
+
+    <div class="container">
+      <ul>
+        {% for report in contexts.reports %}
+        <li><a href="/reports/{{report.rid}}/">{{report.player}} - {{ report.date }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
     <p><a href="{% url 'logout' %}">logout</a></p>
   {% else %}
     <p>You are not logged in</p>

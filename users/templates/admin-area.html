@@ -1,0 +1,324 @@
+{% extends 'main_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+<script>
+        $( document ).ready(function() {
+          $( "button" ).on( "click", function() {
+            console.log("button clicked")
+            var max_reports = document.getElementById("report-nr").value
+            var toggle_max_reports = document.getElementById("max-report")
+            var toggle_show_user_n = document.getElementById("user-nr")
+            var toggle_show_global_n = document.getElementById("global-nr")
+            // var error_message = document.getElementById("error-message")
+            var success_message = document.getElementById("success-message")
+            
+            if (toggle_max_reports.checked  == true) {
+                var toggle_reports = true
+                var max_n = max_reports
+            } else {
+                var toggle_reports = false
+                var max_n = 0
+            }
+            if (toggle_show_user_n.checked  == true) {
+                var toggle_user_n = true
+            } else {
+                var toggle_user_n = false
+            }
+            if (toggle_show_global_n.checked  == true) {
+                var toggle_global_n = true
+            } else {
+                var toggle_global_n = false
+            }
+              jQuery.ajax({
+                          type: "POST",
+                          url: '/send_admin_toggle/',
+                          data: { 'toggle_reports'  : toggle_reports,
+                                  'max_n': max_n,
+                                  'toggle_user_n':toggle_user_n,
+                                  'toggle_global_n':toggle_global_n,
+                                  'csrfmiddlewaretoken': '{{csrf_token}}' },
+                          success: function(data){
+                              var data = data;
+                              console.log(data);
+                              success_message.style.display = "block";
+                              window.location.reload();
+                          }
+              })
+            })
+
+          });
+    </script>
+
+<script>
+        $( document ).ready(function() {
+            document.getElementById("report-nr").value = "{{contexts.max_reports}}"
+        })
+</script>
+
+{% if user.is_superuser %}
+
+<style>
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.table {
+    background-color: white;
+
+    margin-top: 10px;
+
+    border-radius: 10px;
+    margin-left:auto; 
+    margin-right:auto;
+    }
+
+
+    .table {
+    border-collapse: collapse;
+    border-radius: 10px;
+
+
+
+    }
+    .table th {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    background-color:#C9000A;
+    position: sticky;
+    top: 0px;
+
+    }
+
+    .table {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
+
+
+    .table tr:hover {
+    background-color: rgba(201,0,10,0.4);
+    cursor: pointer;
+    } 
+
+    .table th:hover {
+    cursor: auto;
+    }
+
+    .table td {
+    font-size: 14px;
+    font-family: Helvetica;
+    border: 1px solid black;
+    padding:0%;
+    padding-left: 5px;
+    padding-right: 1px; 
+    }
+
+    .table tr {
+    font-size: 10px;
+    font-family: Helvetica;
+    color: black;
+    padding: 0px;
+    border-collapse: collapse;
+    height:20px;
+
+    }
+
+    .table .headers {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
+
+</style>
+<h1>Administration Area</h1>
+<br/>
+<br/>
+<br/>
+<h5 class="card-title">Backend Managment</h5>
+<div class="card-group">
+  <div class="card" style="margin:10px;width:15em;height:15em;">
+    <div class="card-body">
+      <span  class="card-text text-left" style="font-weight:bold;font-size:18px;">Max Reports</span>
+        <input class+="browser-default custom-select" style="border-radius:5%;margin-top:1%;" placeholder="number of reports" id="report-nr"/>      <!-- Rounded switch -->
+        <label class="switch" >
+        {% if contexts.toggle_max_reports == True %}
+        <input type="checkbox" id="max-report" checked>
+        {% else %}
+        <input type="checkbox" id="max-report">
+        {% endif %}
+        <span class="slider round"></span>
+      </label>
+      <label>Off/On
+    </label>
+    <br />
+    <br />
+    <span  class="card-text text-left" style="font-weight:bold;font-size:18px;">Show User Report Numbers</span>
+        <label class="switch" >
+        {% if contexts.show_user_reports_number == True %}
+        <input type="checkbox" id="user-nr" checked>
+        {% else %}
+        <input type="checkbox" id="user-nr">
+        {% endif %}
+        <span class="slider round"></span>
+      </label>
+      <label>No/Yes
+    </label>
+    <br />
+    <br />
+    <span  class="card-text text-left" style="font-weight:bold;font-size:18px;">Show Global Report Numbers</span>
+        <label class="switch" >
+        {% if contexts.show_global_reports_number == True %}
+        <input type="checkbox" id="global-nr" checked>
+        {% else %}
+        <input type="checkbox" id="global-nr">
+        {% endif %}
+        <span class="slider round"></span>
+      </label>
+      <label>No/Yes
+    </label>
+    </div>
+    <button type="button" class="btn btn-danger">Submit Changes</button>
+    <br/>
+    <div id="success-message" style="background:#83de9b;display:none;">
+        <p style="color:white;">Setting successfully updated</p>
+    </div>
+  </div>
+  
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h5 class="card-title text-left">User Reports</h5>
+<div class="card-group">
+<div class="card">
+    <div class="card-body">
+    <table class="table">
+        <tr style="border: 1px solid black;">
+            <th style="width: 20px;"></th>
+            <th>User</th>
+            <th>Player</th>
+            <th>Opponent</th>
+            <th>Date</th>
+            <th>Perf.</th>
+            <th>Pot.</th>
+            <th>Val.</th>
+            <th>Report</th>
+            <th>Delete</th>
+        </tr>
+        {% for report in contexts.reports %}
+        
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>{{ report.user.username }}</td>
+            <td>{{ report.player }}</td>
+            <td>{{ report.opponent }}</td>
+            <td>{{ report.date }}</td>
+            <td>{{ report.performance_score }}</td>
+            <td>{{ report.potential_score }}</td>
+            <td>{{ report.value_score }}</td>
+            <td><a href="/reports/{{report.rid}}">read report</a></td>
+            <td><a href="/delete_report/{{report.rid}}">delete</a></td>
+        {% endfor %}
+            </tr>
+        
+    </table>
+
+
+
+    </div>
+    <!-- <div class="card-footer">
+    <small class="text-muted"></small>
+    </div> -->
+</div>
+
+
+
+{% else %}
+
+<!-- Need a 404 page not found -->
+<h1>Page not Found</h1>
+
+{% endif %}
+
+
+<div class="container">
+        {% if user.is_authenticated %}
+          Hi {{ user.username }}!
+          <p><a href="{% url 'logout' %}">logout</a></p>
+        {% else %}
+          <p>You are not logged in</p>
+          <a href="{% url 'login' %}">login</a> |
+          <a href="{% url 'signup' %}">signup</a>
+        {% endif %}
+        {% endblock %}
+      </div>
+      
